@@ -1,0 +1,116 @@
+/* BusyLancer Custom Theme Overrides */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #244034;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a3329;
+}
+
+/* --- Button Contrast Fix --- */
+.btn-five, .btn-seven {
+    color: #282B2D !important; /* A dark color for the text */
+    background-color: #D6EEF5;
+}
+
+.btn-five:hover, .btn-seven:hover {
+    color: #fff !important; /* Make text white on hover */
+    background-color: #355A6B; /* A darker background for hover */
+}
+
+/* --- RTL (Right-to-Left) Specific Styles for Arabic Page --- */
+[dir="rtl"] .list-style-one li {
+    padding-left: 0;
+    padding-right: 35px; /* Swaps padding from left to right */
+}
+
+[dir="rtl"] .list-style-one li:before {
+    left: auto;
+    right: 0; /* Moves the checkmark icon to the right */
+}
+
+[dir="rtl"] .text-lg-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .justify-content-lg-end {
+    justify-content: flex-start !important;
+}
+
+/* How It Works Section */
+.how-it-works-two .step-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.how-it-works-two .step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.how-it-works-two .step-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Hide the old scroll-top button */
+.scroll-top {
+  display: none !important;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff0000 !important; /* Red background for visibility */
+  color: white !important;
+  border: 2px solid white !important;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex !important; /* Force display for testing */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1 !important; /* Full opacity for testing */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  outline: none;
+  /* Add animation to make it more noticeable */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.back-to-top:hover {
+  background: #1a3329;
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.back-to-top.show {
+  display: flex;
+}

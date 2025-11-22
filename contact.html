@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BusyLancer</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+
+</head>
+<body>
+    <div class="main-page-wrapper">
+        <!-- Under Construction Banner 
+        <div class="alert alert-warning text-center rounded-0 mb-0" role="alert">
+            <strong>Note:</strong> This platform is currently in a beta testing phase. Features and content are for demonstration purposes.
+        </div>--->
+
+        <!-- Header Section -->
+        <header class="theme-main-menu sticky-menu theme-menu-eight border-bottom" style="padding: 5px 0; margin-top:0;">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="logo order-lg-0">
+                    <a href="index.html" class="d-block">
+                        <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                    </a>
+                </div>
+                        
+                <div class="right-widget ms-auto ms-lg-0 order-lg-3">
+                    <ul class="d-flex align-items-center style-none">
+                        <li><a href="login.php" class="signin-btn">Sign In</a></li>
+                        <li class="d-none d-lg-block ms-4">
+                            <a href="register.php" class="btn-five">Register</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="navbar navbar-expand-lg p0 mx-auto order-lg-2">
+                    <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="d-block d-lg-none">
+                                <div class="logo">
+                                    <a href="index.html" class="d-block">
+                                        <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- Main Navigation Items -->
+									<li class="nav-item">
+										<a class="nav-link" href="index.html">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="about-us.html">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="faq.html">FAQ</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="pricing.html">Pricing</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="blog.html">Blog</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="contact.html">Contact</a>
+									</li>
+                            <li class="d-lg-none mt-3">
+                                <a href="register.php" class="btn-five w-100">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <section class="pt-120 pb-120 lg-pt-80 lg-pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="text-center mb-60">
+                            <h1 class="fw-600">Contact Us</h1>
+                            <p class="text-lg">Get in touch with our team</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="contact-info-box text-center p-4 h-100">
+                                    <i class="bi bi-envelope fs-1 text-primary mb-3"></i>
+                                    <h4>Email Us</h4>
+                                    <p class="mb-2">info@busy-lancer.com</p>
+                                    <p class="text-muted">We'll respond within 24 hours</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="contact-info-box text-center p-4 h-100">
+                                    <i class="bi bi-telephone fs-1 text-primary mb-3"></i>
+                                    <h4>Call Us</h4>
+                                    <p class="mb-2">+966 51 134 5304</p>
+                                    <p class="text-muted">Available Mon-Fri, 9AM-6PM KSA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form mt-5">
+                            <form action="#" method="POST" class="p-4 border rounded">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" name="subject" required>
+                                        <option value="">Choose a subject...</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn-five">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <h4>Office Location</h4>
+                            <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Riyadh, Kingdom of Saudi Arabia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+       <div class="text-center mt-60">
+                    <!-- <p class="mb-4"> Have a questions? We're here to help!</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="mailto:info@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">📧 Email Us</a>
+                        <a href="https://wa.me/966511345304" class="btn-five" style="background-color: #D6EEF5;">💬 WhatsApp</a>
+                        <a href="mailto:feedback@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">💡 Send Feedback</a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-muted"><small>🆘 For emergency safety issues, contact our 24/7 safety hotline: <a href="tel:+966511345304" style="color: #dc3545; font-weight: bold;">+966 51 134 5304</a></small></p>
+                    </div>-->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-one">
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html" class="d-inline-block">
+                            <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                        </a>
+                    </div>
+                    <p class="mb-3">Connecting businesses with skilled professionals for on-site gigs and temporary jobs.</p>
+                    <div class="contact-info">
+                        <a href="mailto:info@busy-lancer.com" class="d-block text-white mb-1">
+                            <i class="bi bi-envelope me-2"></i> info@busy-lancer.com
+                        </a>
+                        <a href="tel:+966511345304" class="d-block text-white">
+                            <i class="bi bi-telephone me-2"></i> +966 51 134 5304
+                        </a>
+                        <p class="mt-2 mb-0"><i class="bi bi-geo-alt me-2"></i> Riyadh, KSA</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li class="mb-2"><a href="jobs.html" class="text-white-50">Find Jobs</a></li>
+                        <!--<li class="mb-2"><a href="businesses.html" class="text-white-50">For Businesses</a></li>-->
+                        <li class="mb-2"><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="faq.html" class="text-white-50">FAQ</a></li>
+                        <!--<li class="mb-2"><a href="safety.html" class="text-white-50">Safety</a></li>-->
+                        <li class="mb-2"><a href="terms.html" class="text-white-50">Terms of Service</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="text-white-50">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="blog.html" class="text-white-50">Blog</a></li>
+                        <li class="mb-2"><a href="tips.html" class="text-white-50">Job Tips</a></li>
+                        <li class="mb-2"><a href="community.html" class="text-white-50">Community</a></li>
+                        <li class="mb-2"><a href="feedback.html" class="text-white-50">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white mb-3">Follow Us</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/966511345304" class="text-white-50"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-white-50 small">Download Our App</p>
+                        <a href="#" class="d-block mb-2">
+                            <img src="images/app-store.png" alt="Download on App Store" style="height: 35px;">
+                        </a>
+                        <a href="#" class="d-block">
+                            <img src="images/google-play.png" alt="Get it on Google Play" style="height: 35px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2025 BusyLancer. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-white-50 mb-0">
+                        <small>🚀 Currently in Beta - Your feedback shapes our future!</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.accordion-button {
+    font-weight: 500;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.accordion-body ul {
+    margin-bottom: 1rem;
+}
+
+.accordion-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-item {
+    border: 1px solid #e9ecef;
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.btn-five {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-five:hover {
+    background-color: #1565c0;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+h4 {
+    font-weight: 600;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.alert-info {
+    border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-body {
+        padding: 1rem;
+    }
+    
+    h4 {
+        font-size: 1.1rem;
+    }
+    
+    .btn-five {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+}
+
+.footer-one {
+    background-color: #2c3e50;
+    color: white;
+    padding: 3rem 0 1rem 0;
+}
+
+.social-links a:hover {
+    color: white !important;
+    transform: scale(1.1);
+}
+
+.text-white-50 a:hover {
+    color: white !important;
+}
+</style>
+
+<!-- JavaScript -->
+<script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/slick/slick.min.js"></script>
+    <script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="vendor/jquery.lazy.min.js"></script>
+    <script src="vendor/jquery.counterup.min.js"></script>
+    <script src="vendor/jquery.waypoints.min.js"></script>
+    <script src="vendor/nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendor/validator.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

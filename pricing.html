@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="On-site Gigs, Event Staffing, Freelance Saudi Arabia, MENA, Temporary Jobs">
+	<meta name="description" content="BusyLancer connects businesses with verified, nearby BusyLancers for on-site gigs and temporary jobs. Fast, reliable, and built for the real world.">
+    <meta property="og:site_name" content="BusyLancer">
+    <meta property="og:url" content="https://busylancer.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BusyLancer - Real Work. Real Fast. Real Freedom.">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#244034">
+	<meta name="msapplication-navbutton-color" content="#244034">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+	<title>BusyLancer - Real Work. Real Fast. Real Freedom.</title>
+	<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      /* Fix spacing between alert and header */
+      .alert { margin-bottom: 0 !important; }
+      .theme-main-menu { margin-top: 0 !important; }
+      
+      /* Fix dropdown z-index issue */
+      .dropdown-menu {
+        z-index: 9999 !important;
+        position: absolute !important;
+      }
+      
+      /* Ensure header has proper z-index */
+      .theme-main-menu {
+        z-index: 1000 !important;
+      }
+      
+      /* New Pricing Styles */
+      .user-segment {
+        margin-bottom: 60px;
+      }
+      
+      .segment-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .segment-title {
+        color: #244034;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .segment-description {
+        color: #666;
+        font-size: 1.1rem;
+      }
+      
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .pricing-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      
+      .pricing-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .pricing-card.popular {
+        border: 2px solid #244034;
+        transform: scale(1.03);
+      }
+      
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: #244034;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      
+      .plan-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #244034;
+        margin-bottom: 10px;
+      }
+      
+      .plan-price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      
+      .plan-period {
+        color: #666;
+        margin-bottom: 15px;
+      }
+      
+      .plan-description {
+        color: #777;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .features-list {
+        margin-bottom: 25px;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 10px;
+      }
+      
+      .feature-icon {
+        color: #244034;
+        width: 20px;
+      }
+      
+      .feature-unavailable .feature-icon {
+        color: #ccc;
+      }
+      
+      .feature-unavailable span {
+        color: #999;
+        text-decoration: line-through;
+      }
+      
+      .cta-button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #244034;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      
+      .cta-button:hover {
+        background: #1a3026;
+      }
+      
+      .cta-button.secondary {
+        background: #f8f9fa;
+        color: #244034;
+        border: 1px solid #ddd;
+      }
+      
+      .cta-button.secondary:hover {
+        background: #e9ecef;
+      }
+      
+      /* Competitive Advantage */
+      .competitive-advantage {
+        background: #f8f9fa;
+        padding: 60px 0;
+        margin: 60px 0;
+      }
+      
+      .advantage-title {
+        text-align: center;
+        color: #244034;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .advantage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      
+      .advantage-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .advantage-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      
+      .advantage-stat {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #244034;
+        margin-bottom: 10px;
+      }
+      
+      .advantage-description {
+        color: #666;
+      }
+      
+      /* Specialized Pricing */
+      .specialized-pricing {
+        padding: 60px 0;
+      }
+      
+      .specialized-title {
+        text-align: center;
+        color: #244034;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .specialized-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+      
+      .specialized-card {
+        background: white;
+        padding: 25px 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .specialized-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      
+      .specialized-rate {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #244034;
+        margin-bottom: 10px;
+      }
+      
+      .specialized-description {
+        color: #666;
+        line-height: 1.4;
+      }
+      
+      /* Founder Contact */
+      .founder-contact {
+        background: #244034;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+      
+      .founder-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      @media (max-width: 768px) {
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .advantage-grid, .specialized-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .contact-grid {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .advantage-grid, .specialized-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Tally Form Integration Scripts -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        function openTallyForm() {
+        Tally.openPopup({
+            formId: '31YMel',
+            layout: 'modal',
+            width: 700,
+            tracking: 'true',
+            hiddenFields: {
+            ref: 'misk8'
+            }
+        });
+        }
+    </script>
+        
+	<div class="main-page-wrapper">
+
+        <!-- Under Construction Banner -->
+        <div class="alert alert-warning text-center rounded-0 mb-0" role="alert">
+            <strong>Note:</strong> This platform is currently in a beta testing phase. Features and content are for demonstration purposes.
+        </div>
+
+		<!-- Header Section -->
+		<header class="theme-main-menu sticky-menu theme-menu-eight border-bottom" style="padding: 5px 0; margin-top:0;">
+			<div class="d-flex align-items-center justify-content-between">
+				<div class="logo order-lg-0">
+					<a href="index.html" class="d-block">
+						<img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+					</a>
+				</div>
+						
+				<div class="right-widget ms-auto ms-lg-0 order-lg-3">
+					<ul class="d-flex align-items-center style-none">
+						<li><a href="login.php" class="signin-btn">Sign In</a></li>
+						<!-- Register Desktop -->
+						<li class="d-none d-lg-block ms-4">
+							<a href="register.php" class="btn-five">Register</a>
+						</li>
+					</ul>
+				</div> <!--/.right-widget-->
+
+					<nav class="navbar navbar-expand-lg p0 mx-auto order-lg-2">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="index.html" class="d-block">
+												<img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+											</a>
+										</div>
+									</li>
+
+										<!-- Main Navigation Items -->
+									<li class="nav-item">
+										<a class="nav-link" href="index.html">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="about-us.html">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="faq.html">FAQ</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="pricing.html">Pricing</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="blog.html">Blog</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="contact.html">Contact</a>
+									</li>
+									
+									<!-- Register Mobile -->
+									<li class="d-lg-none mt-3">
+										<a href="register.php" class="btn-five w-100">Register</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+		</header> <!-- /.theme-main-menu -->
+
+		<!-- ===================================================================================================== -->
+		<!--                                            Inner Banner Section                                       -->
+		<!-- ===================================================================================================== -->
+		<div class="inner-banner-one position-relative">
+			<div class="container">
+				<div class="position-relative">
+					<div class="row">
+						<div class="col-xl-6 m-auto text-center">
+							<div class="title-two">
+                                <h2 class="text-black">Pricing</h2>
+                            </div>
+							<p class="text-lg text-black mt-30 lg-mt-20">Choose your membership</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<img src="images/shape/shape_02.svg" alt="" class="lazy-img shapes shape_01">
+			<img src="images/shape/shape_03.svg" alt="" class="lazy-img shapes shape_02">
+		</div> <!-- /.inner-banner-one -->
+
+		<!-- ===================================================================================================== -->
+		<!--                                                Pricing Section                                        -->
+		<!-- ===================================================================================================== -->
+		<section class="pricing-section pt-100 lg-pt-80 pb-120 lg-pb-80">
+			<div class="container">
+                <div class="title-one text-center mb-55 lg-mb-20">
+                    <h2 class="text-dark fw-normal">Transparent Pricing for Everyone</h2>
+                    <p class="mt-10">Fair pricing designed to help you succeed</p>
+                </div>
+
+                <!-- Freelancers Pricing -->
+                <div class="user-segment">
+                    <div class="segment-header">
+                        <h2 class="segment-title">
+                            <i class="fas fa-user-tie"></i>
+                            Freelancers - Break Free from 50% Commissions
+                        </h2>
+                        <p class="segment-description">Plans designed around Saudi labor law minimum wage (SAR 200/day) and specialized rates</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Free Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">Starter</div>
+                            <div class="plan-price">FREE</div>
+                            <div class="plan-period">Always Free</div>
+                            <div class="plan-description">Perfect for testing the platform and building initial reputation</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>5 job applications per month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Basic profile setup</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Standard job alerts</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Payment in 2-3 days</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>15% platform commission</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>Featured in candidate lists</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>Work completion certificates</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button secondary">Start Free</button>
+                        </div>
+
+                        <!-- Professional Plan -->
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-name">Professional</div>
+                            <div class="plan-price">SAR 39</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">For active freelancers who want to maximize their earning potential</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>25 job applications per month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Featured in candidate lists</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Work completion certificates</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Priority job matching</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Next-day payments</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>12% platform commission</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Professional badge</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Go Professional</button>
+                        </div>
+
+                        <!-- VIP Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">VIP Elite</div>
+                            <div class="plan-price">SAR 99</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">Premium service for top-tier freelancers and specialists</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Unlimited job applications</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>AI-powered job suggestions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Access to skill development courses</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>VIP badge & top placement</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Personal assistant support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>10% platform commission</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Instant payments</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Join VIP Elite</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Businesses Pricing -->
+                <div class="user-segment">
+                    <div class="segment-header">
+                        <h2 class="segment-title">
+                            <i class="fas fa-building"></i>
+                            Businesses - Stop Overpaying Mediators
+                        </h2>
+                        <p class="segment-description">Transparent pricing that saves you money while getting better talent</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Free Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">Trial</div>
+                            <div class="plan-price">FREE</div>
+                            <div class="plan-period">First month</div>
+                            <div class="plan-description">Test our platform with limited features to see the difference</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>1 job post per month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Up to 10 applications per job</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Basic candidate screening</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Standard support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>15% service fee</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>Priority candidate matching</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>Rehire functionality</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button secondary">Start Free Trial</button>
+                        </div>
+
+                        <!-- Professional Plan -->
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-name">Professional</div>
+                            <div class="plan-price">SAR 299</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">Perfect for SMEs with regular staffing needs</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>12 job posts per month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Unlimited applications per job</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Easy rehire & favorites list</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Advanced candidate filtering</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>12% service fee</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Priority customer support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Hiring analytics dashboard</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Choose Professional</button>
+                        </div>
+
+                        <!-- Enterprise Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">Enterprise</div>
+                            <div class="plan-price">SAR 899</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">For large companies and chains with high-volume needs</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Unlimited job posts</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Bulk hiring tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>API integration support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Custom workflows</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>10% service fee</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Dedicated account manager</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Advanced compliance tools</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agents/Mediators Pricing -->
+                <div class="user-segment">
+                    <div class="segment-header">
+                        <h2 class="segment-title">
+                            <i class="fas fa-users"></i>
+                            Agents/Mediators - Digitize & Scale Your Business
+                        </h2>
+                        <p class="segment-description">Professional tools to manage your network transparently and scale beyond WhatsApp</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Professional Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">Professional Agent</div>
+                            <div class="plan-price">SAR 199</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">Transform your WhatsApp operation into a professional business</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Manage up to 50 freelancers</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Basic management dashboard</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>20% revenue share from matches</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>On-site management tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Standard support</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>Bulk messaging tools</span>
+                                </div>
+                                <div class="feature-item feature-unavailable">
+                                    <i class="fas fa-times feature-icon"></i>
+                                    <span>White-label option</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Start Professional</button>
+                        </div>
+
+                        <!-- Business Manager Plan -->
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-name">Business Manager</div>
+                            <div class="plan-price">SAR 499</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">Complete platform to manage both internal and external operations</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Manage up to 150 freelancers</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Advanced management platform</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>25% revenue share from matches</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Bulk messaging & notifications</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Inside + outside platform management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Staff scheduling & replacement tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Priority support</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Choose Business Manager</button>
+                        </div>
+
+                        <!-- Enterprise Agent Plan -->
+                        <div class="pricing-card">
+                            <div class="plan-name">Enterprise Network</div>
+                            <div class="plan-price">SAR 999</div>
+                            <div class="plan-period">per month</div>
+                            <div class="plan-description">Full-scale agency solution with white-label options</div>
+                            
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Unlimited freelancer management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>White-label platform option</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>30% revenue share from matches</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>API access & custom integrations</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Advanced analytics & reporting</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Dedicated account manager</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span>Custom compliance & workflows</span>
+                                </div>
+                            </div>
+                            
+                            <button class="cta-button">Go Enterprise</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competitive Advantage -->
+                <div class="competitive-advantage">
+                    <h2 class="advantage-title">
+                        <i class="fas fa-trophy"></i>
+                        Why BusyLancer is Revolutionary
+                    </h2>
+                    
+                    <div class="advantage-grid">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">💰</div>
+                            <div class="advantage-stat">65% MORE</div>
+                            <div class="advantage-description">Freelancers earn 65% more money compared to traditional mediators who charge 50% hidden commissions</div>
+                        </div>
+                        
+                        <div class="advantage-card">
+                            <div class="advantage-icon">🏢</div>
+                            <div class="advantage-stat">30% SAVINGS</div>
+                            <div class="advantage-description">Businesses save 30-40% on staffing costs compared to traditional agencies</div>
+                        </div>
+                        
+                        <div class="advantage-card">
+                            <div class="advantage-icon">⚡</div>
+                            <div class="advantage-stat">&lt;24 HRS</div>
+                            <div class="advantage-description">Fill positions in under 24 hours vs days/weeks with traditional methods</div>
+                        </div>
+                        
+                        <div class="advantage-card">
+                            <div class="advantage-icon">🛡️</div>
+                            <div class="advantage-stat">100% PROTECTED</div>
+                            <div class="advantage-description">Guaranteed payments, insurance coverage, and professional dispute resolution</div>
+                        </div>
+                        
+                        <div class="advantage-card">
+                            <div class="advantage-icon">📱</div>
+                            <div class="advantage-stat">NO WHATSAPP</div>
+                            <div class="advantage-description">Professional platform replacing chaotic WhatsApp group management</div>
+                        </div>
+                        
+                        <div class="advantage-card">
+                            <div class="advantage-icon">📊</div>
+                            <div class="advantage-stat">TRANSPARENT</div>
+                            <div class="advantage-description">Full visibility of fees, ratings, and performance - no hidden charges</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialized Pricing -->
+                <!-- <div class="specialized-pricing">
+                    <h2 class="specialized-title">
+                        <i class="fas fa-star"></i>
+                        Specialized Rate Guidelines
+                    </h2>
+                    <p style="text-align: center; opacity: 0.9; margin-bottom: 30px;">Based on Saudi labor law and market specializations</p>
+
+                    <div class="specialized-grid">
+                        <div class="specialized-card">
+                            <div class="specialized-icon">⚖️</div>
+                            <div class="specialized-rate">SAR 200+ /day</div>
+                            <div class="specialized-description">Saudi Labor Law Minimum<br>General labor, service, retail</div>
+                        </div>
+
+                        <div class="specialized-card">
+                            <div class="specialized-icon">🎭</div>
+                            <div class="specialized-rate">SAR 400+ /hour</div>
+                            <div class="specialized-description">Professional Models<br>Hand models, hair models, fashion</div>
+                        </div>
+
+                        <div class="specialized-card">
+                            <div class="specialized-icon">🎪</div>
+                            <div class="specialized-rate">SAR 300+ /day</div>
+                            <div class="specialized-description">Event Staff<br>Exhibitions, conferences, festivals</div>
+                        </div>
+
+                        <div class="specialized-card">
+                            <div class="specialized-icon">🏨</div>
+                            <div class="specialized-rate">SAR 250+ /day</div>
+                            <div class="specialized-description">Hospitality<br>Restaurants, hotels, catering</div>
+                        </div>
+
+                        <div class="specialized-card">
+                            <div class="specialized-icon">🎯</div>
+                            <div class="specialized-rate">SAR 500+ /day</div>
+                            <div class="specialized-description">Skilled Specialists<br>Technical, creative, management</div>
+                        </div>
+
+                        <div class="specialized-card">
+                            <div class="specialized-icon">🚀</div>
+                            <div class="specialized-rate">Custom</div>
+                            <div class="specialized-description">Premium Services<br>Consulting, training, expertise</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+		</section>
+		<!-- ./pricing-section -->
+
+		<!-- ===================================================================================================== -->
+		<!--                                            Job Portal Intro Section                                     -->
+		<!-- ===================================================================================================== -->
+		<section class="job-portal-intro">
+			<div class="container">
+				<div class="wrapper bottom-border top-border pt-65 md-pt-50 pb-65 md-pb-50">
+					<div class="row align-items-center">
+						<div class="col-lg-7">
+							<div class="text-center text-lg-start">
+								<h2>Most complete job portal.</h2>
+								<p class="text-md m0 md-pb-20">Signup and start find your job or talents.</p>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<ul class="btn-group style-none d-flex flex-wrap justify-content-center justify-content-lg-end">
+								<li class="me-2"><a href="job-list-v1.html" class="btn-three">Looking for job?</a></li>
+								<li class="ms-2"><a href="register.php" class="btn-four">Post a job</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /.job-portal-intro -->
+
+        <!-- Founder Contact 
+        <div class="founder-contact">
+            <div class="founder-title">
+                <i class="fas fa-user-circle"></i> Founder Contact
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hosssam@aboassi.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+966 511 345 304</span>
+                </div>
+            </div>
+        </div> -->
+
+		<!-- ===================================================================================================== -->
+		<!--                                                Footer Section                                         -->
+		<!-- ===================================================================================================== -->
+		<div class="text-center mt-60">
+                    <p class="mb-4"> Have a questions? We're here to help!</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="mailto:info@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">>📧 Email Us</a>
+                        <a href="https://wa.me/966511345304" class="btn-five" style="background-color: #D6EEF5;">💬 WhatsApp</a>
+                        <a href="mailto:feedback@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">💡 Send Feedback</a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-muted"><small>🆘 For emergency safety issues, contact our 24/7 safety hotline: <a href="tel:+966511345304" style="color: #dc3545; font-weight: bold;">+966 51 134 5304</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-one">
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html" class="d-inline-block">
+                            <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                        </a>
+                    </div>
+                    <p class="mb-3">Connecting businesses with skilled professionals for on-site gigs and temporary jobs.</p>
+                    <div class="contact-info">
+                        <a href="mailto:info@busy-lancer.com" class="d-block text-white mb-1">
+                            <i class="bi bi-envelope me-2"></i> info@busy-lancer.com
+                        </a>
+                        <a href="tel:+966511345304" class="d-block text-white">
+                            <i class="bi bi-telephone me-2"></i> +966 51 134 5304
+                        </a>
+                        <p class="mt-2 mb-0"><i class="bi bi-geo-alt me-2"></i> Riyadh, KSA</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li class="mb-2"><a href="jobs.html" class="text-white-50">Find Jobs</a></li>
+                        <!--<li class="mb-2"><a href="businesses.html" class="text-white-50">For Businesses</a></li>-->
+                        <li class="mb-2"><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="faq.html" class="text-white-50">FAQ</a></li>
+                        <!--<li class="mb-2"><a href="safety.html" class="text-white-50">Safety</a></li>-->
+                        <li class="mb-2"><a href="terms.html" class="text-white-50">Terms of Service</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="text-white-50">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white mb-3">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="blog.html" class="text-white-50">Blog</a></li>
+                        <li class="mb-2"><a href="tips.html" class="text-white-50">Job Tips</a></li>
+                        <li class="mb-2"><a href="community.html" class="text-white-50">Community</a></li>
+                        <li class="mb-2"><a href="feedback.html" class="text-white-50">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white mb-3">Follow Us</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/966511345304" class="text-white-50"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-white-50 small">Download Our App</p>
+                        <a href="#" class="d-block mb-2">
+                            <img src="images/app-store.png" alt="Download on App Store" style="height: 35px;">
+                        </a>
+                        <a href="#" class="d-block">
+                            <img src="images/google-play.png" alt="Get it on Google Play" style="height: 35px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2025 BusyLancer. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-white-50 mb-0">
+                        <small>🚀 Currently in Beta - Your feedback shapes our future!</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.accordion-button {
+    font-weight: 500;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.accordion-body ul {
+    margin-bottom: 1rem;
+}
+
+.accordion-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-item {
+    border: 1px solid #e9ecef;
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.btn-five {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-five:hover {
+    background-color: #1565c0;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+h4 {
+    font-weight: 600;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.alert-info {
+    border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-body {
+        padding: 1rem;
+    }
+    
+    h4 {
+        font-size: 1.1rem;
+    }
+    
+    .btn-five {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+}
+
+.footer-one {
+    background-color: #2c3e50;
+    color: white;
+    padding: 3rem 0 1rem 0;
+}
+
+.social-links a:hover {
+    color: white !important;
+    transform: scale(1.1);
+}
+
+.text-white-50 a:hover {
+    color: white !important;
+}
+</style>
+
+<!-- ===================================================================================================== -->
+<!--                                             Login Modal Section                                       -->
+<!-- ===================================================================================================== -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+        <div class="container">
+            <div class="user-data-form modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="text-center">
+                    <h2>Welcome to the Pilot Program!</h2>
+                    <p>Register now for early access and exclusive perks.</p>
+                </div>
+                <div class="form-wrapper m-auto">
+							<form action="#" class="mt-10">
+								<div class="row">
+									<div class="col-12">
+										<div class="input-group-meta position-relative mb-25">
+											<label>Email*</label>
+											<input type="email" placeholder="Your Email Address">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="input-group-meta position-relative mb-20">
+											<label>Name*</label>
+											<input type="text" placeholder="Your Full Name">
+										</div>
+									</div>
+                                    <div class="col-12">
+										<div class="input-group-meta position-relative mb-20">
+											<label>I am a...</label>
+											<select class="form-select">
+                                                <option selected>Choose...</option>
+                                                <option value="1">BusyLancer / Talent</option>
+                                                <option value="2">Business / Company</option>
+                                                <option value="3">Talent Agent / Intermediary</option>
+                                            </select>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="btn-eleven fw-500 tran3s d-block mt-20">Request Early Access</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- /.form-wrapper -->
+                    </div>
+                    <!-- /.user-data-form -->
+                </div>
+            </div>
+        </div>
+
+
+		<button class="scroll-top">
+			<!-- Icon is added via CSS to ensure it always appears -->
+		</button>
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="vendor/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- WOW js -->
+		<script src="vendor/wow/wow.min.js"></script>
+		<!-- Slick Slider -->
+		<script src="vendor/slick/slick.min.js"></script>
+		<!-- Fancybox -->
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<!-- Lazy -->
+		<script src="vendor/jquery.lazy.min.js"></script>
+		<!-- js Counter -->
+		<script src="vendor/jquery.counterup.min.js"></script>
+		<script src="vendor/jquery.waypoints.min.js"></script>
+		<!-- Nice Select -->
+		<script src="vendor/nice-select/jquery.nice-select.min.js"></script>
+		<!-- validator js -->
+		<script src="vendor/validator.js"></script>
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script>
+        <!-- START: CUSTOM SCRIPT FOR FINAL FIXES (This script should be at the very bottom of the body tag) -->
+        <script>
+        $(document).ready(function() {
+            // 1. Fix for the Scroll-to-Top Button Functionality
+            if ($('.scroll-top').length) {
+                $('.scroll-top').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 100); // The 100 is speed in milliseconds
+                    return false;
+                });
+            }
+
+            // 2. Fix for the Under Construction Banner covering the menu
+            // This assumes the banner is immediately before the header and has class .alert-warning
+            var banner = $('.alert-warning');
+            var header = $('.theme-main-menu');
+            if (banner.length && header.length) {
+                var adjustHeaderPosition = function() {
+                    var bannerHeight = banner.outerHeight();
+                    header.css('margin-top', bannerHeight + 'px');
+                };
+
+                // Adjust on load
+                adjustHeaderPosition();
+
+                // Adjust on window resize
+                $(window).on('resize', adjustHeaderPosition);
+            }
+        });
+        </script>
+        <!-- END: CUSTOM SCRIPT FOR FINAL FIXES -->
+	</div> <!-- /.main-page-wrapper -->
+</body>
+
+</html>

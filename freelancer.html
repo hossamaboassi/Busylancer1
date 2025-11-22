@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Freelancer Dashboard</title>
+  <!-- Keep your existing CSS/theme -->
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Minimal helpers only; your theme should handle most styling */
+    .hidden { display: none; }
+    .layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+    .sidebar { border-right: 1px solid #eee; }
+    .content { padding: 16px; }
+    .header { padding: 12px 16px; border-bottom: 1px solid #eee; }
+    .section { padding: 16px; }
+    .grid { display: grid; gap: 12px; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .btn { padding: 8px 12px; }
+    .btn-primary { background: #2b6; color: #fff; }
+    .btn-link { background: none; color: #06c; border: none; padding: 0; }
+    .input, select { width: 100%; padding: 8px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #fff; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar (use your theme classes) -->
+    <aside class="sidebar">
+      <div class="header">
+        <h2>Freelancer</h2>
+        <div style="font-size: 12px; color: #666;">Single-side dashboard</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#/overview">Overview</a></li>
+          <li><a href="#/clients">Clients</a></li>
+          <li><a href="#/jobs">Jobs</a></li>
+          <li><a href="#/calendar">Calendar</a></li>
+          <li><a href="#/finance">Finance</a></li>
+          <li><a href="#/settings">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Overview -->
+      <section id="view-overview" class="section">
+        <h1>Overview</h1>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Active Jobs</h3>
+            <div id="stat-active-jobs">0</div>
+          </div>
+          <div class="card">
+            <h3>Outstanding (\$)</h3>
+            <div id="stat-outstanding">0</div>
+          </div>
+          <div class="card">
+            <h3>This Month Hours</h3>
+            <div id="stat-hours">0</div>
+          </div>
+          <div class="card">
+            <h3>Upcoming</h3>
+            <ul id="stat-upcoming"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients -->
+      <section id="view-clients" class="section hidden">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Clients</h2>
+            <table>
+              <thead><tr><th>Name</th><th>Contact</th><th>Tags</th><th></th></tr></thead>
+              <tbody id="clients-table"></tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h2>Add Client</h2>
+            <form id="client-form" class="grid">
+              <input class="input" name="name" placeholder="Business name" required />
+              <input class="input" name="contact" placeholder="Email or phone" />
+              <input class="input" name="tags" placeholder="Tags (comma-separated)" />
+              <textarea class="input" name="notes" placeholder="Notes"></textarea>
+              <button class="btn btn-primary" type="submit">Save Client</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jobs -->
+      <section id="view-jobs" class="section hidden">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Jobs</h2>
+            <table>
+              <thead><tr><th>Title</th><th>Client</th><th>Status</th><th>Due</th><th>Amount</th><th></th></tr></thead>
+              <tbody id="jobs-table"></tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h2>Add Job</h2>
+            <form id="job-form" class="grid">
+              <input class="input" name="title" placeholder="Job title" required />
+              <select class="input" name="clientId" required></select>
+              <select class="input" name="status">
+                <option>planned</option>
+                <option>in-progress</option>
+                <option>delivered</option>
+                <option>invoiced</option>
+                <option>paid</option>
+              </select>
+              <input class="input" name="rate" type="number" step="0.01" placeholder="Rate" />
+              <input class="input" name="qty" type="number" step="0.1" placeholder="Hours/Qty" />
+              <input class="input" name="dueDate" type="date" />
+              <textarea class="input" name="notes" placeholder="Notes"></textarea>
+              <button class="btn btn-primary" type="submit">Save Job</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calendar -->
+      <section id="view-calendar" class="section hidden">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Calendar</h2>
+            <table>
+              <thead><tr><th>Event</th><th>Job</th><th>Start</th><th>End</th><th></th></tr></thead>
+              <tbody id="calendar-table"></tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h2>Add Event (manual)</h2>
+            <form id="event-form" class="grid">
+              <input class="input" name="title" placeholder="Event title" required />
+              <select class="input" name="jobId"></select>
+              <input class="input" name="start" type="datetime-local" required />
+              <input class="input" name="end" type="datetime-local" />
+              <input class="input" name="location" placeholder="Location"/>
+              <textarea class="input" name="notes" placeholder="Notes"></textarea>
+              <button class="btn btn-primary" type="submit">Add Event</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Finance -->
+      <section id="view-finance" class="section hidden">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Invoices</h2>
+            <table>
+              <thead><tr><th>#</th><th>Job</th><th>Total</th><th>Status</th><th></th></tr></thead>
+              <tbody id="invoices-table"></tbody>
+            </table>
+            <button class="btn" id="export-csv">Export CSV</button>
+          </div>
+          <div class="card">
+            <h2>Create Invoice (manual)</h2>
+            <form id="invoice-form" class="grid">
+              <select class="input" name="jobId" required></select>
+              <input class="input" name="issueDate" type="date" required />
+              <input class="input" name="dueDate" type="date" />
+              <div class="card">
+                <h3>Line Items</h3>
+                <div id="line-items"></div>
+                <button class="btn btn-link" id="add-line-item" type="button">+ Add line</button>
+              </div>
+              <button class="btn btn-primary" type="submit">Create Invoice</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section id="view-settings" class="section hidden">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Preferences</h2>
+            <form id="settings-form" class="grid">
+              <input class="input" name="currency" placeholder="Currency (e.g., USD)" />
+              <input class="input" name="defaultRate" type="number" step="0.01" placeholder="Default rate" />
+              <button class="btn btn-primary" type="submit">Save Settings</button>
+            </form>
+          </div>
+          <div class="card">
+            <h2>Import / Export</h2>
+            <input type="file" id="import-file" accept="application/json,text/csv" />
+            <button class="btn" id="import-json">Import JSON</button>
+            <button class="btn" id="export-json">Export JSON</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Simple store (replace with your backend if needed; for now localStorage)
+    const Store = {
+      key: 'freelancer-dashboard',
+      state: { clients: [], jobs: [], events: [], invoices: [], settings: { currency: 'USD', defaultRate: 0 } },
+      load() {
+        try {
+          const raw = localStorage.getItem(this.key);
+          this.state = raw ? JSON.parse(raw) : this.state;
+        } catch (e) { console.warn('Failed to parse store', e); }
+      },
+      save() { localStorage.setItem(this.key, JSON.stringify(this.state)); },
+      id() { return Math.random().toString(36).slice(2) }
+    };
+    Store.load();
+
+    // Router
+    const views = ['overview','clients','jobs','calendar','finance','settings'];
+    function show(view) {
+      views.forEach(v => document.getElementById('view-' + v).classList.toggle('hidden', v !== view));
+      render(view);
+    }
+    window.addEventListener('hashchange', () => {
+      const v = location.hash.replace('#/','') || 'overview';
+      show(views.includes(v) ? v : 'overview');
+    });
+    show((location.hash.replace('#/','')) || 'overview');
+
+    // Helpers
+    const fmtMoney = (n) => (Store.state.settings.currency || 'USD') + ' ' + (Number(n||0).toFixed(2));
+    const getClientName = (id) => (Store.state.clients.find(c => c.id === id)?.name || '—');
+    const getJobTitle = (id) => (Store.state.jobs.find(j => j.id === id)?.title || '—');
+
+    // Overview renderer
+    function renderOverview() {
+      const active = Store.state.jobs.filter(j => ['planned','in-progress','delivered','invoiced'].includes(j.status));
+      document.getElementById('stat-active-jobs').textContent = active.length;
+      const outstanding = Store.state.invoices.reduce((sum, inv) => {
+        const paid = (inv.payments || []).reduce((p,a)=>p + Number(a.amount||0), 0);
+        return sum + Math.max(0, Number(inv.total||0) - paid);
+      }, 0);
+      document.getElementById('stat-outstanding').textContent = fmtMoney(outstanding);
+      // crude monthly hours: sum qty for jobs with delivered/invoiced/paid and dueDate in month
+      const now = new Date(); const month = now.getMonth(); const year = now.getFullYear();
+      const hours = Store.state.jobs.filter(j => j.dueDate && new Date(j.dueDate).getMonth()===month && new Date(j.dueDate).getFullYear()===year)
+        .reduce((h,j)=>h + Number(j.qty||0), 0);
+      document.getElementById('stat-hours').textContent = hours.toFixed(1);
+      const upcoming = Store.state.events
+        .filter(e => new Date(e.start) >= new Date())
+        .sort((a,b)=>new Date(a.start)-new Date(b.start))
+        .slice(0,5);
+      const ul = document.getElementById('stat-upcoming'); ul.innerHTML='';
+      upcoming.forEach(e => {
+        const li = document.createElement('li');
+        li.textContent = `${new Date(e.start).toLocaleString()} — ${e.title}`;
+        ul.appendChild(li);
+      });
+    }
+
+    // Clients
+    function renderClients() {
+      const tbody = document.getElementById('clients-table'); tbody.innerHTML = '';
+      Store.state.clients.forEach(c => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${c.name}</td>
+          <td>${c.contact||''}</td>
+          <td>${c.tags||''}</td>
+          <td><button class="btn btn-link" data-id="${c.id}">Edit</button></td>`;
+        tr.querySelector('button').onclick = () => {
+          const name = prompt('Name', c.name); if (name==null) return;
+          c.name = name;
+          c.contact = prompt('Contact', c.contact||'') ?? c.contact;
+          c.tags = prompt('Tags', c.tags||'') ?? c.tags;
+          Store.save(); renderClients();
+        };
+        tbody.appendChild(tr);
+      });
+      // populate client selects
+      document.querySelectorAll('select[name="clientId"]').forEach(sel => {
+        sel.innerHTML = `<option value="">Select client</option>` + Store.state.clients.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+      });
+    }
+    document.getElementById('client-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const client = { id: Store.id(), name: f.get('name'), contact: f.get('contact'), tags: f.get('tags'), notes: f.get('notes') };
+      Store.state.clients.push(client); Store.save(); e.target.reset(); renderClients();
+    });
+
+    // Jobs
+    function renderJobs() {
+      const tbody = document.getElementById('jobs-table'); tbody.innerHTML = '';
+      Store.state.jobs.forEach(j => {
+        const amount = Number(j.rate||0) * Number(j.qty||0);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${j.title}</td>
+          <td>${getClientName(j.clientId)}</td>
+          <td>${j.status}</td>
+          <td>${j.dueDate||''}</td>
+          <td>${fmtMoney(amount)}</td>
+          <td>
+            <button class="btn btn-link" data-id="${j.id}" data-action="calendar">Add to Calendar</button>
+            <button class="btn btn-link" data-id="${j.id}" data-action="invoice">Create Invoice</button>
+            <button class="btn btn-link" data-id="${j.id}" data-action="edit">Edit</button>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+      tbody.querySelectorAll('button').forEach(btn => btn.onclick = (e) => {
+        const id = e.target.getAttribute('data-id');
+        const action = e.target.getAttribute('data-action');
+        const job = Store.state.jobs.find(j => j.id===id);
+        if (!job) return;
+        if (action==='calendar') {
+          // Manual: prefill event form with job
+          location.hash = '#/calendar';
+          setTimeout(() => {
+            document.querySelector('#event-form select[name="jobId"]').value = job.id;
+            document.querySelector('#event-form input[name="title"]').value = job.title;
+          }, 25);
+        } else if (action==='invoice') {
+          location.hash = '#/finance';
+          setTimeout(() => {
+            document.querySelector('#invoice-form select[name="jobId"]').value = job.id;
+          }, 25);
+        } else if (action==='edit') {
+          const title = prompt('Title', job.title); if (title==null) return;
+          job.title = title;
+          job.status = prompt('Status (planned/in-progress/delivered/invoiced/paid)', job.status) || job.status;
+          job.rate = Number(prompt('Rate', job.rate||0) ?? job.rate);
+          job.qty = Number(prompt('Hours/Qty', job.qty||0) ?? job.qty);
+          job.dueDate = prompt('Due Date (YYYY-MM-DD)', job.dueDate||'') || job.dueDate;
+          Store.save(); renderJobs(); renderOverview();
+        }
+      });
+    }
+    document.getElementById('job-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const job = {
+        id: Store.id(),
+        title: f.get('title'),
+        clientId: f.get('clientId'),
+        status: f.get('status') || 'planned',
+        rate: Number(f.get('rate')||Store.state.settings.defaultRate||0),
+        qty: Number(f.get('qty')||0),
+        dueDate: f.get('dueDate') || '',
+        notes: f.get('notes') || ''
+      };
+      Store.state.jobs.push(job); Store.save(); e.target.reset(); renderJobs(); renderOverview();
+    });
+
+    // Calendar
+    function renderCalendar() {
+      const tbody = document.getElementById('calendar-table'); tbody.innerHTML = '';
+      Store.state.events.forEach(ev => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${ev.title}</td>
+          <td>${getJobTitle(ev.jobId)}</td>
+          <td>${ev.start ? new Date(ev.start).toLocaleString() : ''}</td>
+          <td>${ev.end ? new Date(ev.end).toLocaleString() : ''}</td>
+          <td><button class="btn btn-link" data-id="${ev.id}">Delete</button></td>`;
+        tr.querySelector('button').onclick = () => {
+          Store.state.events = Store.state.events.filter(e => e.id !== ev.id);
+          Store.save(); renderCalendar(); renderOverview();
+        };
+        tbody.appendChild(tr);
+      });
+      // populate job select
+      const sel = document.querySelector('#event-form select[name="jobId"]');
+      sel.innerHTML = `<option value="">(Optional) Link to job</option>` + Store.state.jobs.map(j => `<option value="${j.id}">${j.title}</option>`).join('');
+    }
+    document.getElementById('event-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const ev = { id: Store.id(), title: f.get('title'), jobId: f.get('jobId') || null, start: f.get('start'), end: f.get('end'), location: f.get('location'), notes: f.get('notes') };
+      Store.state.events.push(ev); Store.save(); e.target.reset(); renderCalendar(); renderOverview();
+    });
+
+    // Finance
+    function renderFinance() {
+      const tbody = document.getElementById('invoices-table'); tbody.innerHTML = '';
+      Store.state.invoices.forEach(inv => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${inv.id.slice(0,6)}</td>
+          <td>${getJobTitle(inv.jobId)}</td>
+          <td>${fmtMoney(inv.total)}</td>
+          <td>${inv.status}</td>
+          <td>
+            <button class="btn btn-link" data-id="${inv.id}" data-action="addPayment">Add Payment</button>
+            <button class="btn btn-link" data-id="${inv.id}" data-action="markSent">Mark Sent</button>
+            <button class="btn btn-link" data-id="${inv.id}" data-action="delete">Delete</button>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+      tbody.querySelectorAll('button').forEach(btn => btn.onclick = (e) => {
+        const id = e.target.getAttribute('data-id');
+        const action = e.target.getAttribute('data-action');
+        const inv = Store.state.invoices.find(i => i.id===id);
+        if (!inv) return;
+        if (action==='addPayment') {
+          const amt = Number(prompt('Payment amount', 0)); if (!amt) return;
+          const date = prompt('Date (YYYY-MM-DD)', new Date().toISOString().slice(0,10)) || new Date().toISOString().slice(0,10);
+          inv.payments = inv.payments || []; inv.payments.push({ amount: amt, date });
+          const paid = inv.payments.reduce((s,a)=>s+Number(a.amount),0);
+          inv.status = paid >= inv.total ? 'paid' : inv.status;
+        } else if (action==='markSent') {
+          inv.status = 'sent';
+        } else if (action==='delete') {
+          Store.state.invoices = Store.state.invoices.filter(i => i.id !== id);
+        }
+        Store.save(); renderFinance(); renderOverview();
+      });
+      // populate job select
+      const sel = document.querySelector('#invoice-form select[name="jobId"]');
+      sel.innerHTML = `<option value="">Select job</option>` + Store.state.jobs.map(j => `<option value="${j.id}">${j.title}</option>`).join('');
+    }
+    document.getElementById('add-line-item').addEventListener('click', () => {
+      const wrap = document.getElementById('line-items');
+      const row = document.createElement('div');
+      row.className = 'grid'; row.style.gridTemplateColumns = '2fr 1fr 1fr';
+      row.innerHTML = `
+        <input class="input" placeholder="Description" />
+        <input class="input" type="number" step="0.1" placeholder="Qty" />
+        <input class="input" type="number" step="0.01" placeholder="Rate" />`;
+      wrap.appendChild(row);
+    });
+    document.getElementById('invoice-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const lines = Array.from(document.querySelectorAll('#line-items > div')).map(div => {
+        const [desc, qty, rate] = div.querySelectorAll('input');
+        return { desc: desc.value, qty: Number(qty.value||0), rate: Number(rate.value||0), total: Number(qty.value||0) * Number(rate.value||0) };
+      });
+      const total = lines.reduce((s,l)=>s + l.total, 0);
+      const inv = { id: Store.id(), jobId: f.get('jobId'), issueDate: f.get('issueDate'), dueDate: f.get('dueDate'), lineItems: lines, total, status: 'draft', payments: [] };
+      Store.state.invoices.push(inv); Store.save(); e.target.reset(); document.getElementById('line-items').innerHTML=''; renderFinance(); renderOverview();
+    });
+
+    // Settings + import/export
+    function renderSettings() {
+      const f = document.getElementById('settings-form');
+      f.currency.value = Store.state.settings.currency || 'USD';
+      f.defaultRate.value = Store.state.settings.defaultRate || 0;
+    }
+    document.getElementById('settings-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      Store.state.settings.currency = f.get('currency') || 'USD';
+      Store.state.settings.defaultRate = Number(f.get('defaultRate')||0);
+      Store.save(); alert('Settings saved'); renderOverview();
+    });
+    document.getElementById('export-json').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(Store.state,null,2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'freelancer-dashboard.json'; a.click();
+    });
+    document.getElementById('export-csv').addEventListener('click', () => {
+      const rows = [['Invoice','Job','Total','Status','Paid','Outstanding']];
+      Store.state.invoices.forEach(inv => {
+        const paid = (inv.payments||[]).reduce((s,a)=>s+Number(a.amount||0),0);
+        rows.push([inv.id, getJobTitle(inv.jobId), inv.total, inv.status, paid, Math.max(0, inv.total - paid)]);
+      });
+      const csv = rows.map(r => r.join(',')).join('
+');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'invoices.csv'; a.click();
+    });
+    document.getElementById('import-json').addEventListener('click', async () => {
+      const file = document.getElementById('import-file').files[0];
+      if (!file) return alert('Choose a JSON file first.');
+      const text = await file.text();
+      try {
+        const obj = JSON.parse(text);
+        // Minimal validation
+        ['clients','jobs','events','invoices','settings'].forEach(k => { if (obj[k]) Store.state[k] = obj[k]; });
+        Store.save(); alert('Imported'); ['clients','jobs','calendar','finance','settings','overview'].forEach(render);
+      } catch (e) { alert('Invalid JSON'); }
+    });
+
+    // View render dispatcher
+    function render(view) {
+      ({
+        overview: renderOverview,
+        clients: renderClients,
+        jobs: renderJobs,
+        calendar: renderCalendar,
+        finance: renderFinance,
+        settings: renderSettings
+      }[view]||(()=>{}))();
+    }
+  </script>
+</body>
+</html>

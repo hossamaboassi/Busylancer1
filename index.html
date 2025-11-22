@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="On-site Gigs, Event Staffing, Freelance Saudi Arabia, MENA, Temporary Jobs">
+	<meta name="description" content="BusyLancer connects businesses with verified, nearby BusyLancers for on-site gigs and temporary jobs. Fast, reliable, and built for the real world.">
+    <meta property="og:site_name" content="BusyLancer">
+    <meta property="og:url" content="https://busylancer.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BusyLancer - Real Work. Real Fast. Real Freedom.">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#244034">
+	<meta name="msapplication-navbutton-color" content="#244034">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+	<title>BusyLancer - Real Work. Real Fast. Real Freedom.</title>
+	<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
+
+    <style>
+            /* Fix dropdown visibility issue */
+        .theme-main-menu {
+            z-index: 10000;
+            position: relative;
+        }
+        
+        .theme-main-menu .dropdown-menu {
+            z-index: 10001 !important;
+        }
+    
+      /* Fix spacing between alert and header */
+      .alert { margin-bottom: 0 !important; }
+      .theme-main-menu { margin-top: 0 !important; }
+      
+      /* Fix dropdown z-index issue */
+      .dropdown-menu {
+        z-index: 9999 !important;
+        position: absolute !important;
+      }
+      
+      /* Ensure header has proper z-index */
+      .theme-main-menu {
+        z-index: 1000 !important;
+      }
+      
+    .hero-image-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    max-width: 100%;
+    }
+    
+    .hero-image {
+        transition: opacity 0.6s ease;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Black and white image - visible by default */
+    .bw-image {
+        opacity: 1;
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Color image - hidden by default */
+    .color-image {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    /* Hover effects */
+    .hero-image-container:hover .bw-image {
+        opacity: 0;
+    }
+    
+    .hero-image-container:hover .color-image {
+        opacity: 1;
+    }
+    
+    /* Optional: Add a subtle scale effect on hover */
+    .hero-image-container:hover {
+        transform: scale(1.02);
+    }
+    
+     /* Competitive Advantage */
+      .competitive-advantage {
+        background: #f8f9fa;
+        padding: 60px 0;
+        margin: 60px 0;
+      }
+      
+      .advantage-title {
+        text-align: center;
+        color: #244034;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .advantage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      
+      .advantage-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .advantage-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      
+      .advantage-stat {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #244034;
+        margin-bottom: 10px;
+      }
+      
+      .advantage-description {
+        color: #666;
+      }
+       /* Founder Contact */
+      .founder-contact {
+        background: #244034;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+      
+      .founder-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      @media (max-width: 768px) {
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .advantage-grid, .specialized-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .contact-grid {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .advantage-grid, .specialized-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+		/* Mobile Menu Styling */
+		@media (max-width: 991.98px) {
+			.navbar-collapse {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background-color: #ffffff;
+				border: 1px solid #e9ecef;
+				border-top: none;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				z-index: 1000;
+				padding: 20px;
+			}
+			
+			.navbar-nav {
+				flex-direction: column;
+				width: 100%;
+			}
+			
+			.navbar-nav .nav-item {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			
+			.navbar-nav .nav-link {
+				color: #333333 !important;
+				font-weight: 500;
+				padding: 12px 16px;
+				border-radius: 6px;
+				transition: all 0.3s ease;
+				display: block;
+			}
+			
+			.navbar-nav .nav-link:hover {
+				background-color: #f8f9fa;
+				color: #FF6347 !important;
+			}
+			
+			/* Mobile Register Button */
+			.navbar-nav .btn-five {
+				background-color: #FF6347;
+				color: white !important;
+				text-align: center;
+				padding: 12px;
+				border-radius: 6px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s ease;
+			}
+			
+			.navbar-nav .btn-five:hover {
+				background-color: #e5543d;
+				transform: translateY(-1px);
+			}
+		}
+
+		/* Hamburger Menu Styling */
+		.navbar-toggler {
+			border: none;
+			padding: 4px 8px;
+		}
+
+		.navbar-toggler span {
+			display: block;
+			width: 25px;
+			height: 3px;
+			background-color: #333;
+			margin: 3px 0;
+			transition: 0.3s;
+			border-radius: 2px;
+		}
+
+		.navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+			transform: rotate(-45deg) translate(-5px, 6px);
+		}
+
+		.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+			transform: rotate(45deg) translate(-5px, -6px);
+		}
+
+		/* Ensure desktop menu colors remain unchanged */
+		@media (min-width: 992px) {
+			.navbar-nav .nav-link {
+				color: inherit;
+			}
+		}
+		
+		/* Fix for mobile menu visibility */
+    .main-page-wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .theme-main-menu {
+        position: relative;
+        z-index: 1000 !important;
+    }
+    
+    .navbar-collapse {
+        z-index: 1001 !important;
+    }
+    
+    /* Mobile Menu Fix */
+    @media (max-width: 991.98px) {
+        .theme-main-menu {
+            position: relative;
+            z-index: 9999;
+    }
+    
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background: white !important;
+        z-index: 9999 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 80px 20px 20px !important;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+    }
+    
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    
+    /* Close button for mobile menu */
+    .navbar-collapse::before {
+        content: '✕';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #244034;
+        z-index: 10000;
+    }
+    
+    .navbar-nav {
+        margin-top: 20px;
+    }
+    
+    
+    /* Ensure no other elements cover the menu */
+    .hero-banner-two,
+    .hero-banner-two * {
+        position: relative;
+        z-index: auto;
+    }
+    /* Hero Section Fixes */
+    .hero-banner-two {
+        padding: 80px 0 60px !important;
+        background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%) !important;
+        min-height: auto !important;
+    }
+    
+    /* Remove excessive padding classes */
+    .hero-banner-two .row {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Text content styling */
+    .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        color: #666 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Button styling */
+    .hero-buttons .btn {
+        padding: 12px 24px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .hero-buttons .btn-primary:hover {
+        background-color: #e5533d !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    .hero-buttons .btn-outline-dark:hover {
+        background-color: #244034 !important;
+        color: white !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Image container optimization */
+    .hero-image-container {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .hero-image {
+        border-radius: 12px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Badge styling */
+    .hero-badge .badge {
+        font-size: 0.8rem !important;
+        padding: 8px 16px !important;
+        border-radius: 20px !important;
+    }
+    
+    /* Responsive fixes */
+    @media (max-width: 991.98px) {
+        .hero-banner-two {
+            padding: 60px 0 40px !important;
+            text-align: center !important;
+        }
+        
+        .hero-title {
+            font-size: 2rem !important;
+        }
+        
+        .hero-buttons {
+            justify-content: center !important;
+        }
+        
+        .hero-image-container {
+            margin-top: 40px !important;
+            max-width: 80% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-banner-two {
+            padding: 40px 0 30px !important;
+        }
+        
+        .hero-title {
+            font-size: 1.75rem !important;
+        }
+        
+        .hero-buttons .btn {
+            width: 100% !important;
+            margin-bottom: 10px !important;
+        }
+        
+        .hero-image-container {
+            max-width: 100% !important;
+        }
+    }
+    
+        /* Comparison Toggle Button Styles */
+    .comparison-toggle-btn {
+        background: linear-gradient(135deg, #244034 0%, #2d5242 100%) !important;
+        color: white !important;
+        border: none !important;
+        padding: 15px 30px !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(36, 64, 52, 0.3) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        cursor: pointer !important;
+    }
+    
+    .comparison-toggle-btn:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 20px rgba(36, 64, 52, 0.4) !important;
+        background: linear-gradient(135deg, #2d5242 0%, #244034 100%) !important;
+        color: white !important;
+    }
+    
+    .comparison-toggle-btn:active {
+        transform: translateY(-1px) !important;
+    }
+    
+    /* Collapsed state */
+    .comparison-toggle-btn[aria-expanded="false"] .comparison-arrow {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+    
+    /* Expanded state */
+    .comparison-toggle-btn[aria-expanded="true"] .comparison-arrow {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+    
+    .comparison-icon {
+        font-size: 1.2rem;
+    }
+    
+    .comparison-text {
+        flex: 1;
+    }
+    
+    .comparison-arrow {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Table styling */
+    #comparisonTable {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    #comparisonTable table {
+        margin-bottom: 0;
+    }
+    
+    #comparisonTable .table-dark {
+        background: #244034 !important;
+        border-color: #244034;
+    }
+    
+    #comparisonTable td {
+        padding: 15px;
+        vertical-align: middle;
+    }
+    
+    #comparisonTable tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+    
+    #comparisonTable tr:hover {
+        background-color: #e9ecef;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .comparison-toggle-btn {
+            padding: 12px 20px !important;
+            font-size: 1rem !important;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .comparison-text {
+            text-align: center;
+        }
+    }
+ 
+        /* Back to Top Button Styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #244034;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a3329;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+            /* 1. Constrain header to container width */
+        .theme-main-menu > .container,
+        .theme-main-menu > .container-fluid {
+          max-width: 1140px;
+          margin: 0 auto;
+          padding: 0 15px;
+        }
+        
+        /* 2. Mobile menu background and text color */
+        @media (max-width: 991.98px) {
+          #navbarNav {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 1rem;
+          }
+          #navbarNav .nav-link {
+            color: #244034 !important;       /* Dark green text matching desktop */
+          }
+          #navbarNav .nav-link:hover {
+            color: #FF6347 !important;       /* Accent on hover */
+          }
+          #navbarNav .btn-five {
+            background-color: #244034;        /* Dark green register button */
+            color: #ffffff !important;
+          }
+        }
+        
+        /* 3. Prevent logo & register button from touching edges */
+        .theme-main-menu .d-flex.align-items-center.justify-content-between {
+          padding: 0 15px;    /* Add horizontal padding */
+        }
+        
+        /* 4. Center navbar-toggler button between logo and right-widget */
+        .navbar-toggler {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* 5. Ensure desktop colors remain consistent */
+        @media (min-width: 992px) {
+          .navbar-nav .nav-link {
+            color: inherit;
+          }
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+ 
+    <!-- Header Section -->
+   <!-- Header Section -->
+        <header class="theme-main-menu sticky-menu theme-menu-eight border-bottom">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height:40px;">
+                        </a>
+                    </div>
+        
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg flex-grow-1 mx-4">
+                        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span></span><span></span><span></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <!-- Close button for mobile -->
+                            <div class="d-lg-none text-end mb-3">
+                                <button class="btn-close" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#navbarNav" aria-label="Close"></button>
+                            </div>
+                            
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <!-- Mobile Register Button -->
+                                <li class="nav-item d-lg-none mt-3">
+                                    <a href="register.php" class="btn-five w-100">Register</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+        
+                    <!-- Right Widgets -->
+                    <div class="right-widget d-flex align-items-center">
+                        <a href="login.php" class="signin-btn me-3">Sign In</a>
+                        <a href="register.php" class="btn-five d-none d-lg-inline-block">Register</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+          </div>
+
+  <!-- Add this CSS anywhere after your Bootstrap CSS -->
+  <style>
+    /* Constrain header content */
+    .theme-main-menu .container { max-width:1140px; }
+
+    /* Hamburger icon bars */
+    .navbar-toggler span {
+      display:block; width:25px; height:3px; background:#333; margin:4px 0;
+      transition:0.3s;
+    }
+    .navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+      transform:rotate(-45deg) translate(-5px,6px);
+    }
+    .navbar-toggler[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+    .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+      transform:rotate(45deg) translate(-5px,-6px);
+    }
+
+    /* Mobile menu styling */
+    @media (max-width:991.98px) {
+      #navbarNav {
+        background:#fff; border:1px solid #e9ecef; padding:1rem;
+      }
+      .navbar-nav .nav-link {
+        color:#244034 !important; padding:0.5rem 1rem;
+      }
+      .navbar-nav .nav-link:hover {
+        color:#FF6347 !important;
+      }
+      .navbar-nav .btn-five {
+        background:#244034; color:#fff !important; margin-top:1rem;
+      }
+    }
+  </style>
+</body>
+		</header> <!-- /.theme-main-menu -->
+       
+	<!-- =============================================
+    1. Hero Banner
+============================================== -->
+    <section class="hero-banner-two position-relative">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Text Content - Left Side -->
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-badge mb-3">
+                        <span class="badge bg-warning text-dark">🚀 PILOT PROGRAM - LIMITED SPOTS</span>
+                    </div>
+                    <h1 class="hero-title display-5 fw-bold mb-4">
+                        Get Hired in Under 24 Hours<br>
+                        <span class="text-primary">No Experience Required</span>
+                    </h1>
+                    <p class="hero-subtitle lead mb-4">
+                        Skip the middleman. Connect directly with local businesses in Saudi Arabia for instant gigs and fair pay.
+                    </p>
+                          
+                    <div class="hero-buttons d-flex flex-wrap gap-3 mb-3">
+                        <a href="register.php?type=freelancer" class="btn btn-primary btn-lg" style="background-color: #FF6347; border-color: #FF6347;">
+                            👷 Find Local Gigs
+                        </a>
+                        <a href="register.php?type=business" class="btn btn-outline-dark btn-lg" style="border-color: #244034; color: #244034;">
+                            🏢 Post a Job & Hire Fast
+                        </a>
+                    </div>
+                    
+                    <p class="hero-note text-muted small">
+                        Join 500+ early users in our pilot program
+                    </p>
+                </div>
+                <!-- END of col-lg-6 -->
+    
+                <!-- Image Content - Right Side -->
+                <div class="col-lg-5 col-md-5">
+                    <div class="hero-image-container">
+                        <!-- Black and white image (visible by default) -->
+                        <img src="2222.png" alt="A team of on-site BusyLancers ready to work" class="hero-image bw-image img-fluid">
+                        
+                        <!-- Color image (shown on hover) -->
+                        <img src="222.png" alt="A team of on-site BusyLancers ready to work" class="hero-image color-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- /.hero-banner-two -->
+		<!-- 
+		============================================
+		2. Brief Description
+		============================================== 
+		-->
+		<section class="text-feature-one position-relative pt-100 pb-100 bg-light">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-lg-8 m-auto text-center">
+				<h2 class="fw-600 mb-4">Why BusyLancer Eliminates Traditional Problems</h2>
+				<div class="row mt-5">
+				  <div class="col-md-6">
+					<div class="comparison-card p-4 bg-danger text-white rounded mb-4">
+					  <h5>❌ Traditional Way</h5>
+					  <ul class="list-unstyled">
+						<li>• Wait days for WhatsApp responses</li>
+						<li>• 50% commissions to middlemen</li>
+						<li>• No payment protection</li>
+						<li>• Unreliable job matching</li>
+					  </ul>
+					</div>
+				  </div>
+				  <div class="col-md-6">
+					<div class="comparison-card p-4 bg-success text-white rounded mb-4">
+					  <h5>✅ BusyLancer Way</h5>
+					  <ul class="list-unstyled">
+						<li>• Instant job notifications</li>
+						<li>• Keep 90%+ of earnings</li>
+						<li>• Guaranteed secure payments</li>
+						<li>• Location-based matching</li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</section>
+
+
+		<!-- 
+		=============================================
+			2. Brief Description
+		============================================== 
+		-->
+        <section class="text-feature-one position-relative pt-100 pb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 m-auto text-center">
+						<div class="wow fadeInUp">
+							<div class="title-one">
+								<h2 class="fw-600">Turn Free Time Into Paid Time. BusyLancer connects people to fast, flexible field gigs</h2>
+							</div>
+                            <p class="text-lg mt-40">We’re not like Fiverr or Upwork. We’re not like Uber or Careem.
+                                BusyLancer uses location-based technology to connect businesses with a network of verified, local BusyLancers who are ready to show up, work hard, and make it happen — even in under an hour
+                            </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+				<section style="background-color: #fff3cd; color: #856404; padding: 10px 20px; text-align: center; font-weight: bold;">
+		  🎉 Limited Launch! Only 500 BusyLancers will be approved in this pilot phase. Don’t miss your chance — <a href="register.php" style="color: #0c5460;">Join Now</a>.
+		</section>
+		
+                	<!-- Tally Popup Button -->
+        <script async src="https://tally.so/widgets/embed.js"></script>
+        
+        <!-- New div to center the button -->
+        <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+            <button data-tally-open="31YMel?ref=misk8" 
+                    data-tally-layout="modal" 
+                    data-tally-width="600" 
+                    data-tally-overlay="1" 
+                    data-tally-emoji-text="🚀" 
+                    data-tally-auto-close="0" 
+                    style="all:unset; cursor:pointer; padding:15px 30px; background:#FF6347; color:#fff; border-radius:8px; font-size:18px; font-weight:bold; display: inline-block;">
+              🚀 Join the Pilot – Get Early Access
+            </button>
+        </div>
+
+
+		<!--
+		=====================================================
+			3. How It Works
+		=====================================================
+		-->
+		<section id="how-it-works" class="how-it-works-two pt-120 pb-100 lg-pt-80 lg-pb-60">
+			<div class="container text-center">
+			  <h2 class="mb-60">Get Started in 3 Simple Steps</h2>
+			  
+			  <div class="row g-4">
+				<div class="col-md-4 mb-4">
+				  <div class="step-card p-4 bg-white rounded-3 shadow-sm h-100" style="border-top: 4px solid #244034;">
+					<div class="step-icon mb-4" style="font-size: 48px; color: #244034;">
+					  <i class="fas fa-user-check"></i>
+					</div>
+										<h4 class="mb-3" style="color: #244034;">Sign Up & Verify</h4>
+					<p class="mb-0">Complete your profile with Saudi ID verification. Takes under 5 minutes.</p>
+				  </div>
+				</div>
+				
+				<div class="col-md-4 mb-4">
+				  <div class="step-card p-4 bg-white rounded-3 shadow-sm h-100" style="border-top: 4px solid #2ecc71;">
+					<div class="step-icon mb-4" style="font-size: 48px; color: #2ecc71;">
+					  <i class="fas fa-search-location"></i>
+					</div>
+										<h4 class="mb-3" style="color: #2ecc71;">Find Local Gigs</h4>
+					<p class="mb-0">Browse jobs on our map or get instant WhatsApp notifications for nearby opportunities.</p>
+				  </div>
+				</div>
+				
+				<div class="col-md-4 mb-4">
+				  <div class="step-card p-4 bg-white rounded-3 shadow-sm h-100" style="border-top: 4px solid #e74c3c;">
+					<div class="step-icon mb-4" style="font-size: 48px; color: #e74c3c;">
+					  <i class="fas fa-wallet"></i>
+					</div>
+										<h4 class="mb-3" style="color: #e74c3c;">Work & Get Paid</h4>
+					<p class="mb-0">Complete the gig, get rated, and receive instant payment to your wallet.</p>
+				  </div>
+				</div>
+			  </div>
+			  
+			  <!-- CTA after explanation -->
+			  <div class="mt-5">
+				<a href="register.php?type=freelancer" class="btn btn-primary btn-lg px-5 py-3" style="background: linear-gradient(135deg, #FF6347, #FF4500); border: none; border-radius: 50px;">
+				  🚀 Join 500+ Active BusyLancers
+				</a>
+			  </div>
+			</div>
+		  </section>
+
+
+		<!-- 
+		=============================================
+			4. Not a Dream Job Platform
+		============================================== 
+		-->
+		<section class="text-feature-one pt-120 pb-100 lg-pt-80 lg-pb-60 bg-light">
+		  <div class="container">
+			<div class="row align-items-center">
+			  <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+				<img src="images/91.png" alt="A BusyLancer holding a clock, representing flexible work" class="img-fluid mw-100">
+			  </div>
+			  <div class="col-lg-6">
+                <div class="title-one">
+				    <h2 class="fw-600">Not a Dream Job Platform — A Real-Life Opportunity Platform</h2>
+                </div>
+				<p class="mt-30 text-md">BusyLancer is built for people who need flexibility: students, side hustlers, part-timers, and anyone looking to boost their income without long-term commitments.</p>
+				<ul class="list-style-one style-none mt-40">
+				  <li>Work when you want, where you want</li>
+				  <li>Get paid fast & fairly</li>
+				  <li>No online gigs — just real, on-site work</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</section>
+		
+		 <!-- 
+		=============================================
+			Why BusyLancer is Revolutionary
+		============================================== 
+		-->
+		
+		 <!-- Competitive Advantage -->
+		<section class="competitive-advantage py-5">
+			<div class="container">
+				<h2 class="advantage-title text-center mb-5">
+					<i class="fas fa-trophy"></i>
+					Why BusyLancer is Revolutionary
+				</h2>
+				
+				<div class="row g-4">
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">💰</div>
+							<div class="advantage-stat">65% MORE</div>
+							<div class="advantage-description">Freelancers earn 65% more money compared to traditional mediators who charge 50% hidden commissions</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">🏢</div>
+							<div class="advantage-stat">30% SAVINGS</div>
+							<div class="advantage-description">Businesses save 30-40% on staffing costs compared to traditional agencies</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">⚡</div>
+							<div class="advantage-stat">&lt;24 HRS</div>
+							<div class="advantage-description">Fill positions in under 24 hours vs days/weeks with traditional methods</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">🛡️</div>
+							<div class="advantage-stat">100% PROTECTED</div>
+							<div class="advantage-description">Guaranteed payments, insurance coverage, and professional dispute resolution</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">📱</div>
+							<div class="advantage-stat">NO WHATSAPP</div>
+							<div class="advantage-description">Professional platform replacing chaotic WhatsApp group management</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="advantage-card h-100">
+							<div class="advantage-icon">📊</div>
+							<div class="advantage-stat">TRANSPARENT</div>
+							<div class="advantage-description">Full visibility of fees, ratings, and performance - no hidden charges</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+                
+                      <!-- Add this after the competitive advantage cards -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <!-- UPDATED COMPARISON TOGGLE - More clickable appearance -->
+                    <div class="text-center mt-5">
+                        <button class="btn comparison-toggle-btn" data-bs-toggle="collapse" data-bs-target="#comparisonTable" aria-expanded="false" aria-controls="comparisonTable">
+                            <span class="comparison-icon">📊</span>
+                            <span class="comparison-text">See How We Compare to Traditional Methods</span>
+                            <span class="comparison-arrow">▼</span>
+                        </button>
+                    </div>
+        
+                    <!-- Collapsible table - hidden by default -->
+                    <div id="comparisonTable" class="collapse mt-4">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th></th>
+                                        <th>Traditional Mediators</th>
+                                        <th>BusyLancer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Freelancer Earnings</td>
+                                        <td>50% hidden commissions</td>
+                                        <td><strong>65% more income</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Cost</td>
+                                        <td>30-40% higher fees</td>
+                                        <td><strong>Direct savings</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hiring Speed</td>
+                                        <td>Days/weeks</td>
+                                        <td><strong>Under 24 hours</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<!-- 
+		=============================================
+			5. Top Staffing Categories (EDITED)
+		============================================== 
+		-->
+		<section class="category-section-two position-relative pt-150 lg-pt-100 pb-140 lg-pb-80">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-12">
+						<div class="title-one text-center text-sm-start">
+							<h2>Top  Categories</h2>
+						</div>
+					</div>
+				</div>
+				<div class="card-wrapper row mt-80 lg-mt-40">
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/host.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Event Hosts & Ushers</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/sampler.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Promoters & Samplers</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/sales.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Retail & Sales Staff</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/photographers.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Photographers</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/videographers.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Videographers</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/actors.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">Models & Actors</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="register.php?type=event_staff" class="d-block">
+								<div class="icon tran3s d-flex align-items-center justify-content-center"><img src="images/icon/entertainers.png" alt=""></div>
+								<div class="title tran3s fw-500 text-lg">DJs & Entertainers</div>
+								<div class="total-job">99 Gigs</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+						<div class="card-style-four bg-color tran3s w-100 mt-30 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="d-block text-center">
+								<div class="title text-white">And Others...</div>
+								<div class="text-lg text-white">More to come</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 
+		=============================================
+			6. Modeling & Training
+		============================================== 
+		-->
+		<section class="text-feature-three pt-120 pb-120 lg-pt-80 lg-pb-80">
+		  <div class="container">
+			<div class="row align-items-center">
+			  <div class="col-lg-6 order-lg-last">
+                <div class="wow fadeInRight ms-lg-5">
+                    <div class="title-one">
+					    <h2 class="fw-600">👗 New! Modeling Gigs & Pro Training....
+						Get discovered. Get booked.</h2>
+                    </div>
+					<p class="mt-30 text-md">From face models to foot models — connect with agencies and events that need you. Plus, join training sessions to become a top-rated BusyLancer on the platform.</p>
+					<ul class="list-style-one style-none mt-40">
+					  <li>Attend training, get featured</li>
+					  <li>Verified certifications & badges</li>
+					  <li>Modeling profile & casting section</li>
+					</ul>
+                </div>
+			  </div>
+			  <div class="col-lg-6 order-lg-first text-center mt-5 mt-lg-0">
+  <div class="hero-image-container wow fadeInLeft">
+    <!-- Black and white image (visible by default) -->
+    <img src="171.png" alt="A professional model posing" class="hero-image bw-image img-fluid">
+    
+    <!-- Color image (shown on hover) -->
+    <img src="170.png" alt="A professional model posing" class="hero-image color-image img-fluid">
+  </div>
+</div>
+			</div>
+		  </div>
+		</section>
+
+			<!--
+		=====================================================
+			7. Dashboard Section
+		=====================================================
+		-->
+		<section class="dashboard-preview-section pt-120 pb-120 lg-pt-80 lg-pb-60 bg-light">
+			<div class="container">
+				<div class="title-one text-center mb-50 lg-mb-30">
+					<h2 class="fw-600">📲 One Screen to Rule Your Freelance Life</h2>
+					<p class="fs-5 text-secondary mt-3">Manage jobs, track applicants, view analytics, and communicate with talent—all from one powerful dashboard.</p>
+				</div>
+				<div class="dashboard-image-wrapper wow fadeInUp">
+					<img src="images/Dashboard.png" alt="A comprehensive view of the BusyLancer user dashboard" class="w-100">
+					<div onclick="openTallyForm()" style="cursor:pointer;">
+                  <h2>🎯 Want to be part of the pilot?</h2>
+                  <p>Click anywhere in this box to apply</p>
+                </div>
+				</div>
+			</div>
+			
+		</section>
+		<!--./end dashboard-preview-section -->
+
+		<!-- 
+		=============================================
+			8. Need Event Staff Today?
+		============================================== 
+		-->
+		<section class="text-feature-one position-relative pt-180 xl-pt-150 lg-pt-100 md-pt-80">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5 order-lg-last">
+						<div class="ps-lg-4 wow fadeInRight">
+							<div class="title-one">
+								<h2 class="fw-600">Need Event Staff Today? We Got You.</h2>
+							</div>
+							<p class="mt-40 md-mt-20 mb-40 md-mb-20 text-md">From major expos to local pop-ups, find the staff you need, when you need them. No more last-minute stress.</p>
+							<ul class="list-style-one style-none">
+								<li>Seamless searching</li>
+								<li>Protected payments, every time</li>
+								<li>Wide range of job categories</li>
+							</ul>
+							<a href="about-us.html" class="btn-five border6 mt-70 md-mt-30">Learn More</a>
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-8 m-auto order-lg-first">
+						<div class="img-data position-relative me-xl-5 md-mt-20">
+							<div class="row align-items-center gx-xl-5">
+								<div class="col-6">
+									<img src="images/13.png" alt="Event Staff" class="mt-35 md-mt-20 wow fadeInLeft">
+								</div>
+								<div class="col-6">
+									<img src="images/11.png" alt="Event Crew" class="mt-35 md-mt-20 wow fadeInDown">
+									<img src="images/12.png" alt="Event Management" class="mt-35 md-mt-20 wow fadeInUp">
+								</div>
+							</div>
+							<a class="fancybox rounded-circle video-icon tran3s text-center" data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
+								<i class="bi bi-play-fill"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        
+        <!-- 
+		=============================================
+			9. Numbers & Facts
+		============================================== 
+		-->
+        <section class="counter-section-one pt-120 lg-pt-80 pb-60 lg-pb-10">
+            <div class="container">
+				<div class="border-bottom pb-50 lg-pb-20">
+					<div class="row justify-content-center">
+						<div class="col-sm-4">
+							<div class="counter-block-one mt-25 text-center wow fadeInUp">
+								<div class="main-count fw-500 text-dark"><span class="counter">2</span>M+</div>
+								<p>Annual On-site Gigs in KSA</p>
+							</div> <!-- /.counter-block-one -->
+						</div>
+						<div class="col-sm-4">
+							<div class="counter-block-one mt-25 text-center wow fadeInUp" data-wow-delay="0.2s">
+								<div class="main-count fw-500 text-dark"><span class="counter">15</span>min</div>
+								<p>Average Time to Find Talent</p>
+							</div> <!-- /.counter-block-one -->
+						</div>
+						<div class="col-sm-4">
+							<div class="counter-block-one mt-25 text-center wow fadeInUp" data-wow-delay="0.35s">
+								<div class="main-count fw-500 text-dark">100%</div>
+								<p>Verified & Rated Professionals</p>
+							</div> <!-- /.counter-block-one -->
+						</div>
+					</div>
+				</div> <!-- /.border-bottom -->
+			</div>
+		</section>
+
+		<!-- 
+		=============================================
+			10. Hire Top Talents
+		============================================== 
+		-->
+		<section class="text-feature-three position-relative pt-120 pb-120 lg-pt-80 lg-pb-80">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="wow fadeInLeft">
+							<div class="title-one">
+								<div class="sub-title">FIND BusyLancer</div>
+								<h2 class="fw-600">Hire top talents</h2>
+							</div>
+							<div class="accordion accordion-style-one mt-40" id="accordionTwo">
+								<div class="accordion-item">
+									<div class="accordion-header" id="headingTalentOne">
+										  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalentOne" aria-expanded="true" aria-controls="collapseTalentOne">
+											Seamless Search
+										  </button>
+									</div>
+									<div id="collapseTalentOne" class="accordion-collapse collapse show" aria-labelledby="headingTalentOne" data-bs-parent="#accordionTwo">
+										<div class="accordion-body">
+											<p>It only takes 5 minutes. Set-up is smooth and simple, with fully customisable page design to reflect your brand. It only takes 5 minutes.</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<div class="accordion-header" id="headingTalentTwo">
+										  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalentTwo" aria-expanded="false" aria-controls="collapseTalentTwo">
+											Hire top talents
+										  </button>
+									</div>
+									<div id="collapseTalentTwo" class="accordion-collapse collapse" aria-labelledby="headingTalentTwo" data-bs-parent="#accordionTwo">
+										  <div class="accordion-body">
+											<p>Practice what you learned on realistic lorem quis test questions testing.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 text-center mt-5 mt-lg-0">
+						<div class="img-box position-relative d-flex align-items-center justify-content-center wow fadeInRight">
+							<img src="images/3.png" alt="Business team hiring BusyLancer" class="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!--
+		=====================================================
+			11. Who We Serve Section
+		=====================================================
+		-->
+		<section class="feedback-section-two position-relative pt-120 pb-120 lg-pt-80 lg-pb-80 bg-light">
+			<div class="container position-relative">
+				<div class="row">
+					<div class="col-12 text-center">
+						<div class="title-one mb-60">
+							<h2 class="fw-600">Why You Should Join Us</h2>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+            <div class="col-md-4 d-flex">
+                <div class="feedback-block-two w-100">
+                    <!-- Title is now larger using a heading tag -->
+                    <h4 class="review fw-bold">For BusyLancers & Talent</h4> 
+                    <ul class="list-style-one style-none mt-3">
+                        <li>No experience, car, or connections needed to start.</li>
+                        <li>Get instant access to local, on-site gigs.</li>
+                        <li>For the first time, earn a Certificate of Experience for every hour or task you complete.</li>
+                        <li>Build your profile, get ratings, and grow your reputation.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="feedback-block-two w-100">
+                    <!-- Title is now larger using a heading tag -->
+                    <h4 class="review fw-bold">For Businesses & Companies</h4>
+                     <ul class="list-style-one style-none mt-3">
+                        <li>Find verified, reliable staff for your events in minutes.</li>
+                        <li>Train your selected BusyLancers for your specific, recurring jobs.</li>
+                        <li>Use our map-based search to hire locally and save time.</li>
+                        <li>Manage everything from one dashboard: posting, chatting, and payments.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="feedback-block-two w-100">
+                    <!-- Title is now larger using a heading tag -->
+                    <h4 class="review fw-bold">For Agencies & Intermediaries</h4>
+                     <ul class="list-style-one style-none mt-3">
+                        <li>Easily build and manage your own teams from thousands of profiles.</li>
+                        <li>Access thousands of talent profiles to find the perfect fit.</li>
+                        <li>Automate bookings, track earnings, and expand your reach.</li>
+                        <li>Become a Verified Partner and get dedicated support to grow your agency.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+		<!--
+		=====================================================
+			12. CTA / Early Access (EDITED)
+		=====================================================
+		-->
+		<section class="job-portal-intro" id="early-access">
+			<div class="container">
+				<div class="wrapper bottom-border top-border pt-60 lg-pt-40 pb-65 lg-pb-40">
+					<div class="row align-items-center">
+						<div class="col-lg-8 text-center text-lg-start">
+							<h2 class="fw-bold">💼 Real Gigs. Real Fast. Join Now & Get Early Access Perks.</h2>
+							<p class="text-md m0 md-pb-20">Sign up now for the pilot program and be the first to hire or get hired.</p>
+						</div>
+						<div class="col-lg-4 text-center text-lg-end">
+							<!--<a href="#loginModal" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn-five border6">Register Now</a>-->
+							<a href="register.php?type=individual" class="btn-five" style="background:#FF6347;color:white;padding:15px 25px;font-size:18px;border:none;border-radius:8px;cursor:pointer;">
+                                🚀 Join as Individual
+                            </a>
+							<a href="register.php?type=business" class="btn-five" style="background:#FF6347;color:white;padding:15px 25px;font-size:18px;border:none;border-radius:8px;cursor:pointer;">
+                                🚀 Join as Business
+                            </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /.job-portal-intro -->
+		
+			<!-- ===================================================================================================== -->
+		<!--                                            Job Portal Intro Section                                     -->
+		<!-- ===================================================================================================== -->
+		<section class="job-portal-intro">
+			<div class="container">
+				<div class="wrapper bottom-border top-border pt-65 md-pt-50 pb-65 md-pb-50">
+					<div class="row align-items-center">
+						<div class="col-lg-7">
+							<div class="text-center text-lg-start">
+								<h2>Most complete job portal.</h2>
+								<p class="text-md m0 md-pb-20">Signup and start find your job or talents.</p>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<ul class="btn-group style-none d-flex flex-wrap justify-content-center justify-content-lg-end">
+								<li class="me-2"><a href="job-list-v1.html" class="btn-three">Looking for job?</a></li>
+								<li class="ms-2"><a href="register.php?type=business" class="btn-four">Post a job</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /.job-portal-intro -->
+
+        <!-- Founder Contact -->
+        <!-- <div class="founder-contact">
+            <div class="founder-title">
+                <i class="fas fa-user-circle"></i> Founder Contact
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hosssam@aboassi.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+966 511 345 304</span>
+                </div>
+            </div> -->
+        </div> 
+        <section class="py-5 bg-light">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-md-3">
+                <div class="display-6 fw-bold">100%</div>
+                <p>Verified Professionals</p>
+              </div>
+              <div class="col-md-3">
+                <div class="display-6 fw-bold">24/7</div>
+                <p>Support & Safety</p>
+              </div>
+              <div class="col-md-3">
+                <div class="display-6 fw-bold">0%</div>
+                <p>Hidden Fees</p>
+              </div>
+              <div class="col-md-3">
+                <div class="display-6 fw-bold">500+</div>
+                <p>Pilot Members</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+   
+
+		<!--
+		=====================================================
+			13. Footer
+		=====================================================
+		-->
+		
+        		<div class="text-center mt-60">
+                            <p class="mb-4"> Have a questions? We're here to help!</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-3">
+                                <a href="mailto:info@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">📧 Email Us</a>
+                                <a href="https://wa.me/966511345304" class="btn-five" style="background-color: #D6EEF5;">💬 WhatsApp</a>
+                                <a href="mailto:feedback@busy-lancer.com" class="btn-five" style="background-color: #D6EEF5;">💡 Send Feedback</a>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted"><small>🆘 For emergency safety issues, contact our 24/7 safety hotline: <a href="tel:+966511345304" style="color: #dc3545; font-weight: bold;">+966 51 134 5304</a></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <div class="footer-one">
+            <div class="container">
+                <div class="inner-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-logo mb-3">
+                                <a href="index.html" class="d-inline-block">
+                                    <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                                </a>
+                            </div>
+                            <p class="mb-3">Connecting businesses with skilled professionals for on-site gigs and temporary jobs.</p>
+                            <div class="contact-info">
+                                <a href="mailto:info@busy-lancer.com" class="d-block text-white mb-1">
+                                    <i class="bi bi-envelope me-2"></i> info@busy-lancer.com
+                                </a>
+                                <a href="tel:+966511345304" class="d-block text-white">
+                                    <i class="bi bi-telephone me-2"></i> +966 51 134 5304
+                                </a>
+                                <p class="mt-2 mb-0"><i class="bi bi-geo-alt me-2"></i> Riyadh, KSA</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="index.html" class="text-white-50">Home</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+                                <li class="mb-2"><a href="jobs.html" class="text-white-50">Find Jobs</a></li>
+                                <!--<li class="mb-2"><a href="businesses.html" class="text-white-50">For Businesses</a></li>-->
+                                <li class="mb-2"><a href="contact.html" class="text-white-50">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Support</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="faq.html" class="text-white-50">FAQ</a></li>
+                                <!--<li class="mb-2"><a href="safety.html" class="text-white-50">Safety</a></li>-->
+                                <li class="mb-2"><a href="terms.html" class="text-white-50">Terms of Service</a></li>
+                                <li class="mb-2"><a href="privacy.html" class="text-white-50">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Resources</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="blog.html" class="text-white-50">Blog</a></li>
+                                <li class="mb-2"><a href="tips.html" class="text-white-50">Job Tips</a></li>
+                                <li class="mb-2"><a href="community.html" class="text-white-50">Community</a></li>
+                                <li class="mb-2"><a href="feedback.html" class="text-white-50">Feedback</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h6 class="text-white mb-3">Follow Us</h6>
+                            <div class="social-links">
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                                <a href="https://wa.me/966511345304" class="text-white-50"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                            <div class="mt-3">
+                                <p class="text-white-50 small">Download Our App</p>
+                                <a href="#" class="d-block mb-2">
+                                    <img src="images/app-store.png" alt="Download on App Store" style="height: 35px;">
+                                </a>
+                                <a href="#" class="d-block">
+                                    <img src="images/google-play.png" alt="Get it on Google Play" style="height: 35px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="text-white-50 mb-0">&copy; 2025 BusyLancer. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p class="text-white-50 mb-0">
+                                <small>🚀 Currently in Beta - Your feedback shapes our future!</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+        .accordion-button {
+            font-weight: 500;
+            padding: 1.25rem 1.5rem;
+            border: none;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .accordion-button:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            background-color: #fff;
+        }
+        
+        .accordion-body ul {
+            margin-bottom: 1rem;
+        }
+        
+        .accordion-body ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .accordion-item {
+            border: 1px solid #e9ecef;
+            margin-bottom: 0.5rem;
+            border-radius: 8px !important;
+            overflow: hidden;
+        }
+        
+        .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .btn-five {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-five:hover {
+            background-color: #1565c0;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        h4 {
+            font-weight: 600;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .alert-info {
+            border-radius: 12px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .accordion-button {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .accordion-body {
+                padding: 1rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+            
+            .btn-five {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                margin: 5px;
+            }
+        }
+        
+        .footer-one {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem 0;
+        }
+        
+        .social-links a:hover {
+            color: white !important;
+            transform: scale(1.1);
+        }
+        
+        .text-white-50 a:hover {
+            color: white !important;
+        }
+        </style>
+        
+        <!-- Modal (Commented out) -->
+        <!--
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="container">
+                    <div class="user-data-form modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="text-center">
+                            <h2>Welcome to the Pilot Program!</h2>
+                            <p>Register now for early access and exclusive perks.</p>
+        								<div class="row">
+        									<div class="col-12">
+        										<div class="input-group-meta position-relative mb-25">
+        											<label>Email*</label>
+        											<input type="email" placeholder="Your Email Address">
+        										</div>
+        									</div>
+        									<div class="col-12">
+        										<div class="input-group-meta position-relative mb-20">
+        											<label>Name*</label>
+        											<input type="text" placeholder="Your Full Name">
+        										</div>
+        									</div>
+                                            <div class="col-12">
+        										<div class="input-group-meta position-relative mb-20">
+        											<label>I am a...</label>
+        											<select class="form-select">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">BusyLancer / Talent</option>
+                                                        <option value="2">Business / Company</option>
+                                                        <option value="3">Talent Agent / Intermediary</option>
+                                                    </select>
+        										</div>
+        									</div>
+        									<div class="col-12">
+        										<button class="btn-eleven fw-500 tran3s d-block mt-20">Request Early Access</button>
+        									</div>
+        								</div>
+        							</form>
+        						</div>
+        						<!-- /.form-wrapper -->
+                            </div>
+                            <!-- /.user-data-form -->
+                        </div>
+                    </div>
+                </div> -->
+        <!-- ===================================================================================================== -->
+		<!--                                             Login Modal Section                                       -->
+		<!-- ===================================================================================================== -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="container">
+                    <div class="user-data-form modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="text-center">
+							<h2>Welcome to the Pilot Program!</h2>
+							<p>Login to access your account.</p>
+						</div>
+						<div class="form-wrapper m-auto">
+							<!-- Login Form -->
+								<form id="loginForm" action="login.php" method="POST" class="mt-10">
+									<input type="hidden" name="csrf_token" value="<?php echo bin2hex(random_bytes(32)); ?>">
+									<div class="row">
+										<div class="col-12">
+											<div class="input-group-meta position-relative mb-25">
+												<label for="login-email">Email*</label>
+												<input type="email" id="login-email" name="email" placeholder="Your Email Address" autocomplete="username email" required>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="input-group-meta position-relative mb-20">
+												<label for="login-password">Password*</label>
+												<input type="password" id="login-password" name="password" placeholder="Enter Password" autocomplete="current-password" required>
+											</div>
+										</div>
+										<div class="col-12">
+											<button type="submit" class="btn-eleven fw-500 tran3s d-block mt-20">
+												<span class="button-text">Login</span>
+											</button>
+										</div>
+										<div class="d-flex justify-content-between mt-3">
+											<a href="register.php" class="text-primary">Create an account</a>
+											<a href="forgot-password.php" class="text-muted">Forgot password?</a>
+										</div>
+									</div>
+								</form>
+						</div>
+						<!-- /.form-wrapper -->
+                    </div>
+                    <!-- /.user-data-form -->
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Load jQuery from CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <!-- Load Bootstrap from CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Load SweetAlert2 for beautiful alerts -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+        <script>
+        // Utility function to show alerts
+        function showAlert(icon, title, text) {
+            return Swal.fire({
+                icon: icon,
+                title: title,
+                text: text,
+                confirmButtonColor: '#244034',
+                confirmButtonText: 'OK'
+            });
+        }
+        
+        // Wait for the document to be fully loaded
+        $(document).ready(function() {
+            console.log('Document ready - initializing JavaScript');
+    
+    // Handle login form submission
+    $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        const $form = $(this);
+        const $submitBtn = $form.find('button[type="submit"]');
+        const originalBtnText = $submitBtn.html();
+        
+        // Show loading state
+        $submitBtn.prop('disabled', true).html(
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Signing in...'
+        );
+        
+        // Submit form via AJAX
+        $.ajax({
+            url: 'login.php',
+            type: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    // Show success message and redirect
+                    showAlert('success', 'Success!', response.message || 'Login successful!').then(() => {
+                        window.location.href = response.redirect || 'dashboard.php';
+                    });
+                } else {
+                    // Show error message
+                    showAlert('error', 'Error', response.message || 'Invalid email or password. Please try again.');
+                    $submitBtn.prop('disabled', false).html(originalBtnText);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Login error:', error);
+                let errorMessage = 'An error occurred. Please try again.';
+                
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorMessage = xhr.responseJSON.message;
+                } else if (xhr.statusText) {
+                    errorMessage = xhr.statusText;
+                }
+                
+                showAlert('error', 'Error', errorMessage);
+                $submitBtn.prop('disabled', false).html(originalBtnText);
+            }
+        });
+    });
+    
+    // Check if jQuery is loaded
+    if (typeof jQuery !== 'undefined') {
+        console.log('✅ jQuery is loaded');
+    } else {
+        console.log('❌ jQuery FAILED to load');
+        alert('jQuery failed to load. Please check your internet connection.');
+        return;
+    }
+    
+    // Check if Bootstrap is loaded
+    if (typeof bootstrap !== 'undefined') {
+        console.log('✅ Bootstrap is loaded');
+    } else {
+        console.log('❌ Bootstrap FAILED to load');
+        alert('Bootstrap failed to load. Please check your internet connection.');
+        return;
+    }
+    
+    // Initialize all Bootstrap collapse components
+    var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+    var collapseList = collapseElementList.map(function (collapseEl) {
+        return new bootstrap.Collapse(collapseEl);
+    });
+    console.log('Initialized ' + collapseList.length + ' collapse elements');
+    
+    
+    // Fix for the under construction banner spacing
+    var bannerHeight = $('.alert-warning').outerHeight();
+    $('.theme-main-menu').css('margin-top', bannerHeight + 'px');
+    console.log('✅ All JavaScript initialized successfully');
+    });
+    </script>
+    
+    </div> <!-- /.main-page-wrapper -->
+    
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    
+    <style>
+        /* Back to Top Button Styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #244034;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a3329;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+    
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }); <!-- Tally Form Integration Scripts -->
+      <script async src="https://tally.so/widgets/embed.js"></script>
+      
+        function openTallyForm() {
+          Tally.openPopup({
+            formId: '31YMel',
+            layout: 'modal',
+            width: 700,
+            tracking: 'true',
+            hiddenFields: { ref: 'misk8' }
+          });
+        }
+  
+
+      <div class="main-page-wrapper">
+        <!-- Under Construction Banner -->
+        <div class="alert alert-warning text-center rounded-0 mb-0" role="alert">
+          <strong>Note:</strong> This platform is currently in a beta testing phase. Features and content are for demonstration purposes.
+        </div>
+
+    
+            <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/68dcf59f8574b01951516e97/1j6fhutth';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
+</body>
+</html>

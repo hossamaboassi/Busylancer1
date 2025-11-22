@@ -1,0 +1,88 @@
+/* =============================================================== */
+/*              CUSTOM ADMIN STYLES FOR BUSYLANCER                 */
+/* =============================================================== */
+
+/* 1. General Dark Theme */
+body {
+    background-color: #212529 !important; /* Dark background for the main content */
+    color: #f8f9fa; /* Light text color */
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+    background-color: #343a40; /* Slightly lighter dark for content area */
+}
+
+.card {
+    background-color: #2c3034; /* Darker card background */
+    border: 1px solid #454d55;
+    color: #f8f9fa;
+}
+
+.card-header, .card-footer {
+    background-color: #212529;
+    border-bottom: 1px solid #454d55;
+    border-top: 1px solid #454d55;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb-item.active {
+    color: #adb5bd;
+}
+
+.text-muted {
+    color: #adb5bd !important;
+}
+
+/* 2. Sidebar Styling */
+.sb-sidenav-dark {
+    background-color: #212529; /* Main sidebar dark color */
+}
+
+/* Active Dashboard Button */
+.sb-sidenav-dark .sb-sidenav-menu .nav .nav-link.active {
+    background-color: #28a745; /* Your green accent color */
+    color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav .nav-link:hover {
+    background-color: #2e3338;
+}
+
+.sb-sidenav-dark .sb-sidenav-footer {
+    background-color: #1a1d20;
+}
+
+/* 3. Navbar and Fonts */
+.sb-topnav {
+    background-color: #2c3034 !important; /* Dark navbar */
+    border-bottom: 1px solid #454d55;
+}
+
+h1, .h3, .h5 {
+    color: #f8f9fa !important;
+}
+
+/* 4. Center Area Card Hover Effect */
+.row .card {
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* Mostly transparent by default */
+    background-color: #343a40; /* Default background */
+}
+
+.row .card:hover {
+    opacity: 1; /* Fully visible on hover */
+    background-color: #454d55; /* Slightly lighter on hover */
+}
+
+/* Make the icon and text inside the card visible */
+.row .card .card-body,
+.row .card .card-footer {
+    background-color: transparent !important;
+}
+
+.row .card .card-body .fa-3x {
+    opacity: 1 !important; /* Ensure icons are always visible */
+}

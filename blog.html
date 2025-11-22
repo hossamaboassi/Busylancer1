@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="On-site Gigs, Event Staffing, Freelance Saudi Arabia, MENA, Temporary Jobs">
+	<meta name="description" content="BusyLancer connects businesses with verified, nearby BusyLancers for on-site gigs and temporary jobs. Fast, reliable, and built for the real world.">
+    <meta property="og:site_name" content="BusyLancer">
+    <meta property="og:url" content="https://busylancer.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BusyLancer - Real Work. Real Fast. Real Freedom.">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#244034">
+	<meta name="msapplication-navbutton-color" content="#244034">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+	<title>BusyLancer Blog - Real Work. Real Fast. Real Freedom.</title>
+	<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      /* Fix spacing between alert and header */
+      .alert { margin-bottom: 0 !important; }
+      .theme-main-menu { margin-top: 0 !important; }
+      
+      /* Fix dropdown z-index issue */
+      .dropdown-menu {
+        z-index: 9999 !important;
+        position: absolute !important;
+      }
+      
+      /* Ensure header has proper z-index */
+      .theme-main-menu {
+        z-index: 1000 !important;
+      }
+      
+      /* Blog specific styles */
+      .blog-page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      
+      .blog-page-subtitle {
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-bottom: 3rem;
+      }
+      
+      .blog-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      }
+      
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      }
+      
+      .blog-card .card-img-top {
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .blog-card .card-title {
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+      }
+      
+      .blog-card .card-title a {
+        color: #212529;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      .blog-card .card-title a:hover {
+        color: #4e54c8;
+      }
+      
+      .blog-meta {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 1rem;
+      }
+      
+      .blog-excerpt {
+        color: #495057;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+      
+      .read-more-btn {
+        color: #4e54c8;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.2s ease;
+      }
+      
+      .read-more-btn:hover {
+        text-decoration: underline;
+        color: #3a3f99;
+      }
+      
+      .read-more-btn i {
+        margin-left: 5px;
+        transition: transform 0.2s ease;
+      }
+      
+      .read-more-btn:hover i {
+        transform: translateX(3px);
+      }
+      
+      .blog-category {
+        display: inline-block;
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      
+      /* Blog Modal Styles */
+      .blog-modal .modal-content {
+        border-radius: 16px;
+        border: none;
+      }
+      
+      .blog-modal .modal-header {
+        border-bottom: 1px solid #eaeaea;
+        padding: 1.5rem 2rem;
+      }
+      
+      .blog-modal .modal-body {
+        padding: 2rem;
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+      
+      .blog-modal .modal-title {
+        font-weight: 700;
+        color: #212529;
+      }
+      
+      .blog-modal .blog-meta {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+      
+      .blog-modal .blog-content {
+        line-height: 1.8;
+        color: #343a40;
+      }
+      
+      .blog-modal .blog-content h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #4e54c8;
+        font-weight: 600;
+      }
+      
+      .blog-modal .blog-content p {
+        margin-bottom: 1rem;
+      }
+      
+      .blog-modal .blog-content ul {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+      
+      .blog-modal .blog-content li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .blog-modal .close {
+        background: #f8f9fa;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+      }
+      
+      .blog-modal .close:hover {
+        opacity: 1;
+      }
+      
+      /* Sidebar styles */
+      .sidebar-widget {
+        margin-bottom: 2.5rem;
+      }
+      
+      .widget-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: #212529;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+      
+      .widget-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        border-radius: 3px;
+      }
+      
+      .category-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .category-list li {
+        margin-bottom: 0.7rem;
+      }
+      
+      .category-list a {
+        color: #495057;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .category-list a:hover {
+        color: #4e54c8;
+      }
+      
+      .category-list span {
+        background: #f8f9fa;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: #6c757d;
+      }
+      
+      .recent-posts .post-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #f1f1f1;
+      }
+      
+      .recent-posts .post-item:last-child {
+        border-bottom: none;
+      }
+      
+      .recent-posts h5 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+      }
+      
+      .recent-posts h5 a {
+        color: #212529;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      .recent-posts h5 a:hover {
+        color: #4e54c8;
+      }
+      
+      .recent-posts span {
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+      
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .tag-cloud a {
+        background: #f8f9fa;
+        color: #495057;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      
+      .tag-cloud a:hover {
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        color: white;
+      }
+      
+      .search-form {
+        position: relative;
+      }
+      
+      .search-form input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: border-color 0.2s ease;
+      }
+      
+      .search-form input:focus {
+        outline: none;
+        border-color: #4e54c8;
+        box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.1);
+      }
+      
+      .search-form button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #6c757d;
+      }
+      
+      @media (max-width: 768px) {
+        .blog-modal .modal-body {
+          padding: 1.5rem;
+        }
+        
+        .blog-modal .modal-header {
+          padding: 1.2rem 1.5rem;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Tally Form Integration Scripts -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        function openTallyForm() {
+        Tally.openPopup({
+            formId: '31YMel',
+            layout: 'modal',
+            width: 700,
+            tracking: 'true',
+            hiddenFields: {
+            ref: 'misk8'
+            }
+        });
+        }
+    </script>
+        
+	<div class="main-page-wrapper">
+
+        <!-- Under Construction Banner -->
+        <div class="alert alert-warning text-center rounded-0 mb-0" role="alert">
+            <strong>Note:</strong> This platform is currently in a beta testing phase. Features and content are for demonstration purposes.
+        </div>
+
+		<!-- Header Section -->
+		<header class="theme-main-menu sticky-menu theme-menu-eight border-bottom" style="padding: 5px 0; margin-top:0;">
+			<div class="d-flex align-items-center justify-content-between">
+				<div class="logo order-lg-0">
+					<a href="index.html" class="d-block">
+						<img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+					</a>
+				</div>
+						
+				<div class="right-widget ms-auto ms-lg-0 order-lg-3">
+					<ul class="d-flex align-items-center style-none">
+						<li><a href="signin.html" class="signin-btn">Sign In</a></li>
+						<!-- Register Desktop -->
+						<li class="d-none d-lg-block ms-4">
+							<a href="register-page.html" class="btn-five">Register</a>
+						</li>
+					</ul>
+				</div> <!--/.right-widget-->
+
+					<nav class="navbar navbar-expand-lg p0 mx-auto order-lg-2">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="index.html" class="d-block">
+												<img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+											</a>
+										</div>
+									</li>
+
+									<!-- Main Navigation Items -->
+									<li class="nav-item">
+										<a class="nav-link" href="index.html">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="about-us.html">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="faq.html">FAQ</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="pricing.html">Pricing</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="blog.html">Blog</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="contact.html">Contact</a>
+									</li>
+
+									<!-- Register Mobile -->
+									<li class="d-lg-none mt-3">
+										<a href="register-page.html" class="btn-five w-100">Register</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+		</header> <!-- /.theme-main-menu -->
+
+		<!-- ===================================================================================================== -->
+		<!--                                            Blog Banner Section                                        -->
+		<!-- ===================================================================================================== -->
+		<section class="inner-banner-one position-relative pt-170 pb-150 lg-pt-120 lg-pb-100" style="background-color: #f8f9fa; background-image: url('images/shape/bg_shape_01.png'); background-size: cover; background-position: center;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 m-auto text-center">
+						<h1 class="blog-page-title text-center" style="color: #244034;">BusyLancer Blog</h1>
+						<p class="blog-page-subtitle text-center" style="color: #6c757d;">Insights, tips, and news for temporary workers and businesses</p>
+					</div>
+				</div>
+			</div>
+			<img src="images/shape/shape_02.svg" alt="" class="lazy-img shapes shape_01">
+			<img src="images/shape/shape_03.svg" alt="" class="lazy-img shapes shape_02">
+		</section>
+
+		<!-- ===================================================================================================== -->
+		<!--                                            Blog Content Section                                       -->
+		<!-- ===================================================================================================== -->
+		<section class="blog-section pt-100 lg-pt-80 pb-130 lg-pb-80">
+			<div class="container">
+				<div class="row">
+					<!-- Main Blog Content -->
+					<div class="col-lg-8">
+						<div class="row">
+							<!-- Blog Post 1 -->
+							<div class="col-md-6 mb-40">
+								<div class="card blog-card h-100">
+									<img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Maximize Income as Temporary Worker">
+									<div class="card-body">
+										<div class="blog-category">Income Strategies</div>
+										<div class="blog-meta"><i class="far fa-calendar me-1"></i> July 15, 2025</div>
+										<h3 class="card-title">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="1">5 Smart Ways to Maximize Your Income as a Temporary Worker in Saudi Arabia</a>
+										</h3>
+										<p class="blog-excerpt">Discover proven strategies to boost your earnings as a temporary worker in KSA. From skill stacking to timing your gigs perfectly...</p>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="1" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Blog Post 2 -->
+							<div class="col-md-6 mb-40">
+								<div class="card blog-card h-100">
+									<img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Red Flags for Temporary Workers">
+									<div class="card-body">
+										<div class="blog-category">Safety Tips</div>
+										<div class="blog-meta"><i class="far fa-calendar me-1"></i> July 10, 2025</div>
+										<h3 class="card-title">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="2">Red Flags Every Temporary Worker Should Spot (And How to Avoid Them)</a>
+										</h3>
+										<p class="blog-excerpt">Protect yourself from job scams and unfair employers. Learn the warning signs every temporary worker in Saudi Arabia needs to recognize...</p>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="2" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Blog Post 3 -->
+							<div class="col-md-6 mb-40">
+								<div class="card blog-card h-100">
+									<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwa90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Job Interview Guide">
+									<div class="card-body">
+										<div class="blog-category">Career Development</div>
+										<div class="blog-meta"><i class="far fa-calendar me-1"></i> July 5, 2025</div>
+										<h3 class="card-title">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="3">The Ultimate Guide to Nailing Your First Temporary Job Interview in Saudi Arabia</a>
+										</h3>
+										<p class="blog-excerpt">Master temporary job interviews with insider tips on what employers really want to hear. From cultural expectations to salary negotiations...</p>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="3" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Blog Post 4 -->
+							<div class="col-md-6 mb-40">
+								<div class="card blog-card h-100">
+									<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Personal Branding for Workers">
+									<div class="card-body">
+										<div class="blog-category">Personal Branding</div>
+										<div class="blog-meta"><i class="far fa-calendar me-1"></i> June 28, 2025</div>
+										<h3 class="card-title">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="4">Why Smart Temporary Workers Are Building Personal Brands (And How You Can Too)</a>
+										</h3>
+										<p class="blog-excerpt">Discover why building a personal brand is the secret weapon of successful temporary workers in Saudi Arabia. Learn simple strategies to stand out...</p>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="4" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Blog Post 5 -->
+							<div class="col-md-6 mb-40">
+								<div class="card blog-card h-100">
+									<img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Financial Planning Guide">
+									<div class="card-body">
+										<div class="blog-category">Financial Planning</div>
+										<div class="blog-meta"><i class="far fa-calendar me-1"></i> June 20, 2025</div>
+										<h3 class="card-title">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="5">The Smart Temporary Worker's Guide to Financial Planning in Saudi Arabia</a>
+										</h3>
+										<p class="blog-excerpt">Master your finances as a temporary worker. Learn budgeting strategies, emergency fund tactics, and smart saving tips designed for irregular income...</p>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="5" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Pagination -->
+						<nav aria-label="Blog pagination">
+							<ul class="pagination justify-content-center mt-20">
+								<li class="page-item disabled">
+									<a class="page-link" href="#" tabindex="-1">Previous</a>
+								</li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#">Next</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					
+					<!-- Sidebar -->
+					<div class="col-lg-4">
+						<div class="blog-sidebar ps-xl-4 md-mt-60">
+							<!-- Search Widget -->
+							<div class="sidebar-widget mb-50">
+								<h4 class="widget-title">Search</h4>
+								<form action="#" class="search-form position-relative">
+									<input type="text" placeholder="Search blog...">
+									<button><i class="fas fa-search"></i></button>
+								</form>
+							</div>
+							
+							<!-- Categories Widget -->
+							<div class="sidebar-widget mb-50">
+								<h4 class="widget-title">Categories</h4>
+								<ul class="category-list">
+									<li><a href="#">Income Strategies <span>3</span></a></li>
+									<li><a href="#">Career Development <span>5</span></a></li>
+									<li><a href="#">Financial Planning <span>2</span></a></li>
+									<li><a href="#">Safety Tips <span>4</span></a></li>
+									<li><a href="#">Personal Branding <span>3</span></a></li>
+								</ul>
+							</div>
+							
+							<!-- Recent Posts Widget -->
+							<div class="sidebar-widget mb-50">
+								<h4 class="widget-title">Recent Posts</h4>
+								<div class="recent-posts">
+									<div class="post-item">
+										<h5><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="1">5 Smart Ways to Maximize Your Income as a Temporary Worker in Saudi Arabia</a></h5>
+										<span>July 15, 2025</span>
+									</div>
+									<div class="post-item">
+										<h5><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="2">Red Flags Every Temporary Worker Should Spot (And How to Avoid Them)</a></h5>
+										<span>July 10, 2025</span>
+									</div>
+									<div class="post-item">
+										<h5><a href="#" data-bs-toggle="modal" data-bs-target="#blogModal" data-blog-id="3">The Ultimate Guide to Nailing Your First Temporary Job Interview in Saudi Arabia</a></h5>
+										<span>July 5, 2025</span>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Tags Widget -->
+							<div class="sidebar-widget">
+								<h4 class="widget-title">Tags</h4>
+								<div class="tag-cloud">
+									<a href="#">Freelance</a>
+									<a href="#">On-site Jobs</a>
+									<a href="#">Event Staffing</a>
+									<a href="#">Business Solutions</a>
+									<a href="#">Flexible Work</a>
+									<a href="#">Saudi Arabia</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Blog Modal -->
+		<div class="modal fade blog-modal" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="blogModalLabel">Blog Title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="blog-meta mb-3" id="blogMeta"></div>
+						<div class="blog-content" id="blogContent"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===================================================================================================== -->
+		<!--                                            Footer Section                                         -->
+		<!-- ===================================================================================================== -->
+        		<!-- Footer -->
+        <div class="footer-one">
+            <div class="container">
+                <div class="inner-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-logo mb-3">
+                                <a href="index.html" class="d-inline-block">
+                                    <img src="images/icon/logo.png" alt="BusyLancer Logo" style="max-height: 40px; width: auto;">
+                                </a>
+                            </div>
+                            <p class="mb-3">Connecting businesses with skilled professionals for on-site gigs and temporary jobs.</p>
+                            <div class="contact-info">
+                                <a href="mailto:info@busy-lancer.com" class="d-block text-white mb-1">
+                                    <i class="bi bi-envelope me-2"></i> info@busy-lancer.com
+                                </a>
+                                <a href="tel:+966511345304" class="d-block text-white">
+                                    <i class="bi bi-telephone me-2"></i> +966 51 134 5304
+                                </a>
+                                <p class="mt-2 mb-0"><i class="bi bi-geo-alt me-2"></i> Riyadh, KSA</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="index.html" class="text-white-50">Home</a></li>
+                                <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+                                <li class="mb-2"><a href="jobs.html" class="text-white-50">Find Jobs</a></li>
+                                <!--<li class="mb-2"><a href="businesses.html" class="text-white-50">For Businesses</a></li>-->
+                                <li class="mb-2"><a href="contact.html" class="text-white-50">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Support</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="faq.html" class="text-white-50">FAQ</a></li>
+                                <!--<li class="mb-2"><a href="safety.html" class="text-white-50">Safety</a></li>-->
+                                <li class="mb-2"><a href="terms.html" class="text-white-50">Terms of Service</a></li>
+                                <li class="mb-2"><a href="privacy.html" class="text-white-50">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="text-white mb-3">Resources</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="blog.html" class="text-white-50">Blog</a></li>
+                                <li class="mb-2"><a href="tips.html" class="text-white-50">Job Tips</a></li>
+                                <li class="mb-2"><a href="community.html" class="text-white-50">Community</a></li>
+                                <li class="mb-2"><a href="feedback.html" class="text-white-50">Feedback</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h6 class="text-white mb-3">Follow Us</h6>
+                            <div class="social-links">
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                                <a href="https://wa.me/966511345304" class="text-white-50"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                            <div class="mt-3">
+                                <p class="text-white-50 small">Download Our App</p>
+                                <a href="#" class="d-block mb-2">
+                                    <img src="images/app-store.png" alt="Download on App Store" style="height: 35px;">
+                                </a>
+                                <a href="#" class="d-block">
+                                    <img src="images/google-play.png" alt="Get it on Google Play" style="height: 35px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="text-white-50 mb-0">&copy; 2025 BusyLancer. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p class="text-white-50 mb-0">
+                                <small>🚀 Currently in Beta - Your feedback shapes our future!</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<button class="scroll-top">
+			<!-- Icon is added via CSS to ensure it always appears -->
+		</button>
+
+		<!-- JavaScript - REORDERED for proper dependency loading -->
+		<script src="vendor/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="vendor/slick/slick.min.js"></script>
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<script src="js/site-fixes.js"></script>
+		
+		<!-- Fix for jQuery lazy plugin -->
+		<script>
+		// Fix for jQuery lazy plugin
+		if (typeof jQuery !== 'undefined') {
+			// Load jQuery-dependent plugins only if jQuery is available
+			document.write('<script src="vendor/jquery.lazy.min.js"><\/script>');
+			document.write('<script src="vendor/jquery.counterup.min.js"><\/script>');
+			document.write('<script src="vendor/jquery.waypoints.min.js"><\/script>');
+			document.write('<script src="vendor/nice-select/jquery.nice-select.min.js"><\/script>');
+			document.write('<script src="vendor/validator.js"><\/script>');
+			document.write('<script src="js/theme.js"><\/script>');
+		}
+		</script>
+		
+		<!-- Blog modal fix -->
+		<script>
+		// Blog posts data
+		var blogPosts = {
+			"1": {
+				title: "5 Smart Ways to Maximize Your Income as a Temporary Worker in Saudi Arabia",
+				meta: '<span><i class="far fa-calendar me-2"></i>July 15, 2025</span> <span class="mx-2">•</span> <span><i class="far fa-folder me-1"></i>Income Strategies</span>',
+				content: `
+					<img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded mb-4" alt="Maximize Income as Temporary Worker">
+					<p>As a temporary worker in Saudi Arabia, maximizing your income requires strategic planning and smart decision-making. Here are five proven strategies to help you earn more:</p>
+					<h5>1. Skill Stacking</h5>
+					<p>Diversify your skill set to qualify for higher-paying gigs. For example, if you're an event staff member, learn basic AV setup or registration management to increase your value.</p>
+					<h5>2. Peak Season Planning</h5>
+					<p>Identify high-demand seasons in your industry. The retail and hospitality sectors often need extra staff during holidays and major events like Riyadh Season or Jeddah Season.</p>
+					<h5>3. Build a Strong Profile</h5>
+					<p>Maintain a professional online presence and gather positive reviews from employers to command higher rates.</p>
+				`
+			},
+			"2": {
+				title: "Red Flags Every Temporary Worker Should Spot (And How to Avoid Them)",
+				meta: '<span><i class="far fa-calendar me-2"></i>July 10, 2025</span> <span class="mx-2">•</span> <span><i class="far fa-folder me-1"></i>Safety Tips</span>',
+				content: `
+					<img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded mb-4" alt="Red Flags for Temporary Workers">
+					<p>Protecting yourself from potential scams and unfair working conditions is crucial for temporary workers. Here are key warning signs to watch for:</p>
+					<h5>1. Vague Job Descriptions</h5>
+					<p>Be cautious if the job posting is unclear about duties, pay rate, or working hours. Legitimate employers provide specific details.</p>
+					<h5>2. Requests for Upfront Payments</h5>
+					<p>Never pay for job placement services or training. Legitimate employers don't ask for money upfront.</p>
+					<h5>3. Lack of Contract</h5>
+					<p>Always insist on a written agreement that outlines your pay, working hours, and job responsibilities before starting any assignment.</p>
+				`
+			},
+			"3": {
+				title: "The Ultimate Guide to Nailing Your First Temporary Job Interview in Saudi Arabia",
+				meta: '<span><i class="far fa-calendar me-2"></i>July 5, 2025</span> <span class="mx-2">•</span> <span><i class="far fa-folder me-1"></i>Career Development</span>',
+				content: `
+					<img src="https://images.unsplash.com/photo-1552664739-4136c5db4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded mb-4" alt="Nailing Your First Temporary Job Interview">
+					<p>Acquiring a temporary job in Saudi Arabia can be challenging, but with the right preparation, you can increase your chances of success. Here's a comprehensive guide to help you ace your first temporary job interview:</p>
+					<h5>1. Research the Company</h5>
+					<p>Learn about the company's mission, values, and culture to show your interest and enthusiasm.</p>
+					<h5>2. Review the Job Description</h5>
+					<p>Study the job requirements and be prepared to provide specific examples of how your skills and experience match the job.</p>
+					<h5>3. Prepare Your Resume and References</h5>
+					<p>Ensure your resume is updated and tailored to the job, and have professional references ready.</p>
+				`
+			}
+		};
+
+		// Initialize blog modal functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			// Initialize modal
+			var blogModalEl = document.getElementById('blogModal');
+			var blogModal = (window.bootstrap && window.bootstrap.Modal) ? new bootstrap.Modal(blogModalEl) : null;
+
+			// Handle blog link clicks
+			document.addEventListener('click', function(e) {
+				var target = e.target.closest('[data-bs-target="#blogModal"]');
+				if (!target) return;
+				
+				e.preventDefault();
+				var blogId = target.getAttribute('data-blog-id');
+				var blogData = blogPosts[blogId];
+				
+				if (blogData) {
+					document.getElementById('blogModalLabel').textContent = blogData.title;
+					document.getElementById('blogMeta').innerHTML = blogData.meta;
+					document.getElementById('blogContent').innerHTML = blogData.content;
+					if (blogModal) {
+						blogModal.show();
+					} else {
+						blogModalEl.classList.add('show');
+						blogModalEl.style.display = 'block';
+					}
+				}
+			});
+
+			// Scroll-to-Top Button Functionality
+			document.querySelector('.scroll-top')?.addEventListener('click', function(e) {
+				e.preventDefault();
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			});
+
+			// Fix for the Under Construction Banner covering the menu
+			var banner = document.querySelector('.alert-warning');
+			var header = document.querySelector('.theme-main-menu');
+			if (banner && header) {
+				var adjustHeaderPosition = function() {
+					var bannerHeight = banner.offsetHeight;
+					header.style.marginTop = bannerHeight + 'px';
+				};
+
+				// Adjust on load
+				adjustHeaderPosition();
+
+				// Adjust on window resize
+				window.addEventListener('resize', adjustHeaderPosition);
+			}
+		});
+		if (banner && header) {
+			var adjustHeaderPosition = function() {
+				var bannerHeight = banner.offsetHeight;
+				header.style.marginTop = bannerHeight + 'px';
+			};
+
+			// Adjust on load
+			adjustHeaderPosition();
+
+			// Adjust on window resize
+			window.addEventListener('resize', adjustHeaderPosition);
+		}
+	});
+	});
+	</script>
+</body>
+</html>
